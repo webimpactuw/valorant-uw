@@ -1,0 +1,21 @@
+.footer {
+    background-color: #4C0080;
+    color: #FFFFFF;
+    padding: 20px 0;
+    width: 100%;
+    font: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.copyright {
+    margin: 0 auto;
+    font-size: 22px;
+    position: absolute;
+    top: 44px;
+    left: 949px;
+}
