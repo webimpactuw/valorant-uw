@@ -1,17 +1,22 @@
 import React from "react";
-import Widget from "./widget";
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/home/Home";
+import Events from "./pages/Events";
+import Officers from "./pages/Officers";
 
 function App() {
-  const todos = ["Clean bathroom", "Finish CSE HW", "Cook a meal for roommate", "Walk the dog"];
-
   return (
-    <div className="App">
-      <h1>To-Do List</h1>
-      <ol>
-      {todos.map(todo => <todo text={todo} />)}
-      </ol>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="events" element={<Events />} />
+          <Route path="officers" element={<Officers />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
