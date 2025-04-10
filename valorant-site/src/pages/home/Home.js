@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ToDo from "../../widget";
 import './Home.css';
 
 function Home() {
