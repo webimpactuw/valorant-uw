@@ -1,0 +1,10 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    height: 10rem;
+    border-width: 1px;
+    border-style: solid;
+}
