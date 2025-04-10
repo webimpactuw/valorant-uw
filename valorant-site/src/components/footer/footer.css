@@ -1,22 +1,17 @@
 .footer {
     background-color: #4C0080;
     color: #FFFFFF;
-    padding: 20px 0;
+    padding: 25px 40px;
     width: 100%;
+    box-sizing: border-box;
     font: 'Inter', sans-serif;
     bottom: 0;
     position: fixed;
 }
 
-.footer-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 auto;
-}
-
 .copyright {
     margin: 0 auto;
-    font-size: 22px;
-    top: 44px;
-    left: 949px;
+    font-size: 0.8em;
+    font-weight: 800;
+    text-align: right;
 }
