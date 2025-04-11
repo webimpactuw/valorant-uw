@@ -5,7 +5,9 @@ import './Layout.css';
 function Layout() {
     return (
         <div className="layout-container">
-            <Outlet/>
+            <main>
+                <Outlet/>
+            </main>
             <Footer />
         </div>
     );
