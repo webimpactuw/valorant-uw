@@ -5,29 +5,37 @@ function Home() {
     return (
       <div className="home">
         <HeaderSection />
-        <AboutSection />
-        <PlaySection />
-        <OfficersSection />
-        <SponsorsSection />
+        <AboutSection id="about"/>
+        <PlaySection id="play"/>
+        <OfficersSection id="officers"/>
+        <SponsorsSection id="sponsors"/>
       </div>
     );
 }
 
 function HeaderSection() {
   return (
-    <div className="section">Valorant at UW</div>
+    <div className="section">Valorant at UW 
+      <div className="header-links">
+        <a href="#join" className="header-link">Join a Game</a>
+        <a href="#about" className="header-link">About</a>
+        <a href="#play" className="header-link">Ways to Play</a>
+        <a href="#officers" className="header-link">Officers</a>
+        <a href="#sponsors" className="header-link">Sponsors</a>
+      </div>
+    </div>
   );  
 }
 
-function AboutSection() {
+function AboutSection({ about }) {
   return (
-    <div className="section">About the Club</div>
+    <div id={about} className="section">About the Club</div>
   );
 }
 
-function PlaySection() {
+function PlaySection({ play }) {
   return (
-    <div className="section">
+    <div id={play} className="section">
       <div>Ways to Play</div>
       <Link to="/events">
         <div>View More Events</div>
@@ -36,9 +44,9 @@ function PlaySection() {
   );
 }
 
-function OfficersSection() {
+function OfficersSection({ officers }) {
   return (
-    <div className="section">
+    <div id={officers} className="section">
       <div>Officers</div>
       <Link to="/officers">
         <div>Meet the Squad</div>
@@ -47,9 +55,9 @@ function OfficersSection() {
   );
 }
 
-function SponsorsSection() {
+function SponsorsSection({ sponsors }) {
   return (
-    <div className="section">Sponsors</div>
+    <div id={sponsors} className="section">Sponsors</div>
   );    
 }
 
