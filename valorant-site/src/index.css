@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: 'DINish';
   src: url('./assets/fonts/DINish-Black.woff2');
