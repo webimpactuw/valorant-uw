@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import './Header.css';
+import logo from '../../assets/valorant_at_uw_logo.svg';
 
 function Header() {
     return (
         <header className="header">
-            <div>LOGO</div>
+            <div><img src={logo} alt='Logo' height={55} width={55}></img></div>
             <div className="directory">
                 <Link to="/">HOME</Link>
                 <Link to="/events">EVENTS</Link>
