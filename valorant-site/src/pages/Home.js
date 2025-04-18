@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import './Home.css';
 import '../index.css';
-
+import Background from "../assets/join_a_game_bg.jpeg"
 function Home() {
     return (
       <div className="home">
@@ -57,13 +57,17 @@ function JoinSection() {
     <section
       id="join"
       className="w-full flex justify-center"
-      style={{ backgroundColor: '#FFFFFF'}}
+      style={{backgroundImage: "url(" + Background +")",
+              backgroundSize: "100%",
+              backgroundColor: 'rgba(0,0,0,.6)',
+              backgroundBlendMode: 'darken',
+      }}
     >
     <div className="
           w-[1440px]
           h-[768px]
-        ">About the Club</div>
-        <a href="https://discord.gg/NkCBgg5FJ4" />
+        ">Join Section</div>
+        
     </section>
   );
 }
