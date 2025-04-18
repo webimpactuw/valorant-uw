@@ -63,6 +63,7 @@ function JoinSection() {
           w-[1440px]
           h-[768px]
         ">About the Club</div>
+        <a href="https://discord.gg/NkCBgg5FJ4" />
     </section>
   );
 }
