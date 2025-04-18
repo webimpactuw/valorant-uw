@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import './Home.css';
 import '../index.css';
-<<<<<<< HEAD
 import scrollArrow from '../assets/scroll-arrow-icon.svg'
-
-=======
 import Background from "../assets/join_a_game_bg.jpeg"
->>>>>>> 18923031cea9b5f5ba6cb6161d8cd70cf52ef90b
+
 function Home() {
     return (
       <div className="home">
@@ -87,12 +84,7 @@ function JoinSection() {
     <div className="
           w-[1440px]
           h-[768px]
-<<<<<<< HEAD
-        ">Join</div>
-=======
         ">Join Section</div>
-        
->>>>>>> 18923031cea9b5f5ba6cb6161d8cd70cf52ef90b
     </section>
   );
 }
