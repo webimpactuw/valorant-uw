@@ -6,6 +6,7 @@ function Home() {
     return (
       <div className="home">
         <HeaderSection />
+        <JoinSection />
         <AboutSection />
         <PlaySection />
         <OfficersSection />
@@ -16,44 +17,68 @@ function Home() {
 
 function HeaderSection() {
   return (
-    <div className="h-screen flex items-center">
+    <div className="h-screen flex items-center" style={{ backgroundColor: '#F4F1EE' }}>
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="flex justify-center items-center gap-10">
+
           {/* nav menu */}
-          <nav className="w-[275px] relative h-[350px] order-1">
-            <ul className="list-none p-0 m-0">
-              <li className="absolute right-0 text-right w-full font-black text-4xl" style={{top: "0px"}}>
-                <a href="#join" className="text-black no-underline">JOIN A GAME</a>
+          <nav className="w-[275px] h-[350px] order-1">
+            <ul className="h-full flex flex-col items-end justify-center space-y-4">
+              <li className="font-DINish text-4xl">
+                <a href="#join" className="text-black no-underline" class="tracking-[-0.03em]" >JOIN A GAME</a>
               </li>
-              <li className="absolute right-0 text-right w-full font-black text-4xl" style={{top: "70px"}}>
-                <a href="#about" className="text-black no-underline">ABOUT</a>
+              <li className="font-DINish text-4xl">
+                <a href="#about" className="text-black no-underline" class="tracking-[-0.03em]" >ABOUT</a>
               </li>
-              <li className="absolute right-0 text-right w-full font-black text-4xl" style={{top: "140px"}}>
-                <a href="#play" className="text-black no-underline">WAYS TO PLAY</a>
+              <li className="font-DINish text-4xl">
+                <a href="#play" className="text-black no-underline" class="tracking-[-0.03em]">WAYS TO PLAY</a>
               </li>
-              <li className="absolute right-0 text-right w-full font-black text-4xl" style={{top: "210px"}}>
-                <a href="#officers" className="text-black no-underline">OFFICERS</a>
+              <li className="font-DINish text-4xl">
+                <a href="#officers" className="text-black no-underline" class="tracking-[-0.03em]">OFFICERS</a>
               </li>
-              <li className="absolute right-0 text-right w-full font-black text-4xl" style={{top: "280px"}}>
-                <a href="#sponsors" className="text-black no-underline">SPONSORS</a>
+              <li className="font-DINish text-4xl">
+                <a href="#sponsors" className="text-black no-underline" class="tracking-[-0.03em]">SPONSORS</a>
               </li>
             </ul>
           </nav>
-          
+
           {/* title */}
-          <h1 className="text-[140px] leading-none text-purple-900 font-black m-0 order-2 text-left font-anton">
+          <h1 className="h-[270px] text-[140px] leading-none font-black m-0 order-2 text-left font-anton-sc" style={{color: "#4C0080"}}>
             VALORANT<br />AT UW
           </h1>
         </div>
       </div>
     </div>
-    
+  );
+}
+
+function JoinSection() {
+  return (
+    <section
+      id="join"
+      className="w-full flex justify-center"
+      style={{ backgroundColor: '#FFFFFF'}}
+    >
+    <div className="
+          w-[1440px]
+          h-[768px]
+        ">About the Club</div>
+    </section>
   );
 }
 
 function AboutSection() {
   return (
-    <div className="section">About the Club</div>
+    <div
+      id="about"
+      className="w-full flex justify-center"
+      style={{ backgroundColor: '#3B0361'}}
+    >
+      <div className="
+            w-[1440px]
+            h-[608px]
+          ">About the Club</div>
+    </div>
   );
 }
 
