@@ -7,4 +7,14 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+
+  theme: {
+    extend: {
+      fontFamily: {
+        'anton-sc': ['"Anton SC"', 'sans-serif'],
+        'dinish':    ['DINish',     'sans-serif'],
+      }
+    }
+  }
 }
+

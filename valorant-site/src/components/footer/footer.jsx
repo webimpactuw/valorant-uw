@@ -6,7 +6,7 @@ function Footer(){
     return (
         <footer className='footer'>
             <div><img src={logo} alt='Logo' height={55} width={55}></img></div>
-            <p className='copyright'>COPYRIGHT @2025 VALORANT AT UW</p>
+            <p className='copyright'>COPYRIGHT © 2025 VALORANT AT UW</p>
         </footer>
     );
 }
