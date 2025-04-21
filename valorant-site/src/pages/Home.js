@@ -1,63 +1,153 @@
 import { Link } from "react-router-dom";
 import './Home.css';
+import '../index.css';
+import scrollArrow from '../assets/scroll-arrow-icon.svg'
+import Background from "../assets/join_a_game_bg.jpeg"
 
 function Home() {
     return (
       <div className="home">
         <HeaderSection />
-        <AboutSection id="about"/>
-        <PlaySection id="play"/>
-        <OfficersSection id="officers"/>
-        <SponsorsSection id="sponsors"/>
+        <JoinSection />
+        <AboutSection />
+        <PlaySection />
+        <OfficersSection />
+        <SponsorsSection />
       </div>
     );
 }
 
 function HeaderSection() {
+  const scrollToJoin = () => {
+    const button = document.getElementById("join");
+    if (button) button.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div className="section">Valorant at UW 
-      <div className="header-links">
-        <a href="#join" className="header-link">Join a Game</a>
-        <a href="#about" className="header-link">About</a>
-        <a href="#play" className="header-link">Ways to Play</a>
-        <a href="#officers" className="header-link">Officers</a>
-        <a href="#sponsors" className="header-link">Sponsors</a>
+    <section className="relative h-screen flex items-center" style={{ backgroundColor: '#F4F1EE' }}>
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <div className="flex justify-center items-center gap-10">
+
+          {/* nav menu */}
+          <nav className="w-[275px] h-[350px] order-1">
+            <ul className="h-full flex flex-col items-end justify-center space-y-4">
+              <li className="font-DINish text-4xl">
+                <a href="#join" className="text-black no-underline" class="tracking-[-0.03em]" >JOIN A GAME</a>
+              </li>
+              <li className="font-DINish text-4xl">
+                <a href="#about" className="text-black no-underline" class="tracking-[-0.03em]" >ABOUT</a>
+              </li>
+              <li className="font-DINish text-4xl">
+                <a href="#play" className="text-black no-underline" class="tracking-[-0.03em]">WAYS TO PLAY</a>
+              </li>
+              <li className="font-DINish text-4xl">
+                <a href="#officers" className="text-black no-underline" class="tracking-[-0.03em]">OFFICERS</a>
+              </li>
+              <li className="font-DINish text-4xl">
+                <a href="#sponsors" className="text-black no-underline" class="tracking-[-0.03em]">SPONSORS</a>
+              </li>
+            </ul>
+          </nav>
+
+          {/* title */}
+          <h1 className="h-[270px] text-[140px] leading-none font-black m-0 order-2 text-left font-anton-sc" style={{color: "#4C0080"}}>
+            VALORANT<br />AT UW
+          </h1>
+        </div>
       </div>
-    </div>
-  );  
+      {/* ← Your down‑arrow SVG at the bottom‑center */}
+      <button
+        onClick={scrollToJoin}
+        aria-label="Scroll to join section"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 focus:outline-none"
+      >
+        <img
+          src={scrollArrow}
+          alt=""
+          className="w-30 h-30"
+        />
+      </button>
+    </section>
+  );
+}
+
+function JoinSection() {
+  return (
+    <section
+      id="join"
+      className="w-full flex justify-center"
+      style={{backgroundImage: "url(" + Background +")",
+              backgroundSize: "100%",
+              backgroundColor: 'rgba(0,0,0,.6)',
+              backgroundBlendMode: 'darken',
+      }}
+    >
+    <div className="
+          w-[1440px]
+          h-[768px]
+        ">Join Section</div>
+    </section>
+  );
 }
 
 function AboutSection({ about }) {
   return (
-    <div id={about} className="section">About the Club</div>
+    <section
+      id="about"
+      className="w-full flex justify-center"
+      style={{ backgroundColor: '#3B0361'}}
+    >
+      <div className="
+        w-[1440px]
+        h-[608px]
+        ">About the Club</div>
+    </section>
   );
 }
 
 function PlaySection({ play }) {
   return (
-    <div id={play} className="section">
-      <div>Ways to Play</div>
+    <section 
+      id="play"
+      className="w-full flex justify-center"
+    >
+      <div className="
+        w-[1440px]
+        h-[715px]
+        ">Ways to Play</div>
       <Link to="/events">
         <div>View More Events</div>
       </Link>
-    </div>
+    </section>
   );
 }
 
 function OfficersSection({ officers }) {
   return (
-    <div id={officers} className="section">
-      <div>Officers</div>
+    <section
+    id="officers" 
+    className="w-full flex justify-center" style={{backgroundColor: "#E9CB88"}}
+    >
+      <div className="
+      w-[1440px]
+      h-[568px]
+      ">Officers</div>
       <Link to="/officers">
         <div>Meet the Squad</div>
       </Link>
-    </div>
+    </section>
   );
 }
 
 function SponsorsSection({ sponsors }) {
   return (
-    <div id={sponsors} className="section">Sponsors</div>
+    <section 
+    id="sponsors"
+    className="w-full flex justify-center">
+    <div className="
+    w-[1440px] 
+    h-[466px]"
+    >Sponsors</div>
+    </section>
   );    
 }
 
