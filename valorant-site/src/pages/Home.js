@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import './Home.css';
 import '../index.css';
-import scrollArrow from '../assets/scroll-arrow-icon.svg'
-import Background from "../assets/join_a_game_bg.jpeg"
+import scrollArrow from '../assets/scroll-arrow-icon.svg' /*scroll icon for header*/
+import Background from "../assets/join_a_game_bg.jpeg" /*background photo for join*/
+import discord from '../assets/Discord-Symbol-White.svg' /*discord icon for join*/
 
 function Home() {
     return (
@@ -54,15 +55,15 @@ function HeaderSection() {
           </h1>
         </div>
       </div>
-      {/* ← Your down‑arrow SVG at the bottom‑center */}
+      {/* scroll arrow */}
       <button
         onClick={scrollToJoin}
-        aria-label="Scroll to join section"
+        aria-label="Scroll to Join Section"
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 focus:outline-none"
       >
         <img
           src={scrollArrow}
-          alt=""
+          alt="scroll down"
           className="w-30 h-30"
         />
       </button>
@@ -75,16 +76,25 @@ function JoinSection() {
     <section
       id="join"
       className="w-full flex justify-center"
-      style={{backgroundImage: "url(" + Background +")",
-              backgroundSize: "100%",
-              backgroundColor: 'rgba(0,0,0,.6)',
-              backgroundBlendMode: 'darken',
-      }}
     >
-    <div className="
-          w-[1440px]
-          h-[768px]
-        ">Join Section</div>
+    <div className="w-[1440px] h-[768px] relative" style={{
+        backgroundImage: "url(" + Background +")",
+        backgroundSize: "100%",
+        backgroundColor: 'rgba(0,0,0,.6)',
+        backgroundBlendMode: 'darken',
+        }}>
+    <div className="w-[1497px] h-[770px] left-[-37px] top-0 absolute bg-purple-950/20" />
+    <div className="w-[525px] h-16 left-[457px] top-[299px] absolute text-center justify-start text-7xl font-normal font-['Anton_SC'] uppercase leading-[72px]" style={{color: "#E9CB88"}}>JOIN A GAME</div>
+    <div className="w-[505px] h-20 left-[468px] top-[397px] absolute bg-zinc-300/0 outline outline-2 outline-offset-[-1px] outline-white" />
+    <Link to="https://discord.com/invite/CBGmfamqvk" target="_blank" rel="noopener noreferrer">
+      <div data-property-1="Default" className="w-[494px] px-24 py-4 left-[473px] top-[403px] absolute bg-button-fill inline-flex justify-center items-center gap-5" style={{backgroundColor: "#4C0080"}}>
+          <div className="w-10 h-7 relative overflow-hidden">
+              <div className="w-10 h-7 left-0 top-0 absolute"/><img src={discord} alt="discord" className="w-10 h-7"/>
+          </div>
+          <div className="justify-start text-text-alt text-3xl font-extrabold font-['DINish'] text-white uppercase">Valorant @ UW</div>
+      </div>
+    </Link>
+</div>
     </section>
   );
 }
