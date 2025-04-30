@@ -184,13 +184,26 @@ function PlaySection({ play }) {
       id="play"
       className="w-full flex justify-center"
     >
-      <div className="
-        w-[1440px]
-        h-[715px]
-        ">Ways to Play</div>
-      <Link to="/events">
-        <div>View More Events</div>
-      </Link>
+      <div className="w-[1440px] h-[715px] columns-2 p-24">
+        <div>
+          <div className="text-left text-4xl md:text-5xl lg:text-7xl font-normal font-['Anton_SC'] uppercase leading-tight mb-8">
+            Ways to Play
+
+          </div>
+          <div>
+            Events & More
+          </div>
+          <div>
+
+          </div>
+        </div>
+        <div>
+          <Link to="/events">
+            <div>View More Events</div>
+          </Link>
+        </div>
+      </div>
+      
     </section>
   );
 }
