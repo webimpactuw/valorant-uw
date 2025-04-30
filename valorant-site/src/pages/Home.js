@@ -10,17 +10,19 @@ import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, abo
 function Home() {
     return (
       <div className="home">
-        <HeaderSection />
-        {/* sticky nav bar */}
-        <div className="sticky top-0 z-20 bg-transparent">
-          <StickyNavBar />
-        </div>
-        <JoinSection />
-        <AboutSection />
-        <PlaySection />
-        <OfficersSection />
-        <SponsorsSection />
-      </div>
+        <HeaderSection /> 
+        <div>
+          {/* sticky nav bar */}
+          <div className="sticky top-0 z-50 bg-transparent">
+            <StickyNavBar />
+          </div> 
+          <JoinSection />
+          <AboutSection />
+          <PlaySection />
+          <OfficersSection />
+          <SponsorsSection />
+       </div>
+    </div>
     );
 }
 
@@ -70,28 +72,28 @@ function HeaderSection() {
         <div className="flex justify-center items-center gap-10">
 
           {/* nav menu */}
-          <nav className="w-[275px] h-[350px] order-1">
+          <nav className="w-[275px] h-center order-1">
             <ul className="h-full flex flex-col items-end justify-center space-y-4">
-              <li className="font-DINish text-4xl relative group">
+              <li className="font-DINish text-2xl md:text-3xl lg:text-4xl relative group">
                 <a href="#join" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300" >JOIN A GAME</a>
               </li>
-              <li className="font-DINish text-4xl relative group">
+              <li className="font-DINish text-2xl md:text-3xl lg:text-4xl relative group">
                 <a href="#about" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300" >ABOUT</a>
               </li>
-              <li className="font-DINish text-4xl relative group">
+              <li className="font-DINish text-2xl md:text-3xl lg:text-4xl relative group">
                 <a href="#play" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300">WAYS TO PLAY</a>
               </li>
-              <li className="font-DINish text-4xl relative group">
+              <li className="font-DINish text-2xl md:text-3xl lg:text-4xl relative group">
                 <a href="#officers" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300">OFFICERS</a>
               </li>
-              <li className="font-DINish text-4xl relative group">
+              <li className="font-DINish text-2xl md:text-3xl lg:text-4xl relative group">
                 <a href="#sponsors" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300">SPONSORS</a>
               </li>
             </ul>
           </nav>
 
           {/* title */}
-          <h1 className="h-[270px] text-[140px] leading-none font-black m-0 order-2 text-left font-anton-sc z-20" style={{color: "#4C0080"}}>
+          <h1 className="h-center text-[7rem] md:text-[7.75rem] lg:text-[8.25rem] leading-none font-black m-0 order-2 text-left font-anton-sc z-20" style={{color: "#4C0080"}}>
             VALORANT<br />AT UW
           </h1>
         </div>
@@ -150,7 +152,7 @@ function JoinSection() {
                       <div className="w-10 h-7 left-0 top-0 absolute"/>
                       <img src={discord} alt="discord" className="w-full h-full"/>
                   </div>
-                  <span className="whitespace-nowrap text-text-alt text-3xl font-extrabold font-['DINish'] text-white uppercase">
+                  <span className="whitespace-nowrap text-text-alt text-xl md:text-2xl lg:text-3xl font-extrabold font-['DINish'] text-white uppercase">
                     VALORANT @ UW
                   </span>
               </div>
