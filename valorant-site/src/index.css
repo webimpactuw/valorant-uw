@@ -12,8 +12,8 @@
 
 @font-face {
   font-family: 'DINish';
-  src: url('./assets/fonts/Dinish-Regular.otf') format('otf');
-  font-weight: 400;
+  src: url('./assets/fonts/DINish-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
