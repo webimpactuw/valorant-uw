@@ -5,7 +5,15 @@
 @font-face {
   font-family: 'DINish';
   src: url('./assets/fonts/DINish-Black.woff2') format('woff2');
-  font-weight: normal;
+  font-weight: 900;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINish';
+  src: url('./assets/fonts/DINish-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -13,7 +21,7 @@
 @font-face {
   font-family: 'Anton SC';
   src: url('./assets/fonts/AntonSC-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
