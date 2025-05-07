@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+  "tagDefinitions": [
+    {
+      "tagName": "@hidden",
+      "syntaxKind": "block",
+      "allowMultiple": true
+    },
+    {
+      "tagName": "@todo",
+      "syntaxKind": "block",
+      "allowMultiple": true
+    },
+    {
+      "tagName": "@thoughtLevel",
+      "syntaxKind": "block",
+      "allowMultiple": true
+    },
+    {
+      "tagName": "@interface",
+      "syntaxKind": "modifier",
+      "allowMultiple": false
+    },
+    {
+      "tagName": "@function",
+      "syntaxKind": "modifier",
+      "allowMultiple": false
+    }
+  ],
+  "supportForTags": {
+    "@alpha": true,
+    "@beta": true,
+    "@defaultValue": true,
+    "@deprecated": true,
+    "@example": true,
+    "@experimental": true,
+    "@hidden": true,
+    "@internal": true,
+    "@link": true,
+    "@param": true,
+    "@public": true,
+    "@remarks": true,
+    "@returns": true,
+    "@see": true,
+    "@thoughtLevel": true,
+    "@throws": true,
+    "@todo": true,
+    "@interface": true,
+    "@function": true
+  }
+}

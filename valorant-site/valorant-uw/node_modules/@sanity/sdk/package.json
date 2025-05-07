@@ -1,0 +1,90 @@
+{
+  "name": "@sanity/sdk",
+  "version": "0.0.0-alpha.25",
+  "private": false,
+  "description": "Sanity SDK",
+  "keywords": [
+    "sanity",
+    "sdk",
+    "content operating system",
+    "cms",
+    "headless",
+    "realtime",
+    "content"
+  ],
+  "homepage": "https://github.com/sanity-io/sdk/tree/main/packages/core/README.md",
+  "bugs": {
+    "url": "https://github.com/sanity-io/sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sanity-io/sdk.git"
+  },
+  "license": "MIT",
+  "author": "Sanity <developers@sanity.io>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/_exports/index.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "browserslist": "extends @sanity/browserslist-config",
+  "prettier": "@sanity/prettier-config",
+  "dependencies": {
+    "@sanity/client": "^6.28.4",
+    "@sanity/comlink": "^3.0.1",
+    "@sanity/diff-match-patch": "^3.2.0",
+    "@sanity/mutate": "^0.12.4",
+    "@sanity/types": "^3.78.1",
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21",
+    "reselect": "^5.1.1",
+    "rxjs": "^7.8.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@sanity/browserslist-config": "^1.0.5",
+    "@sanity/pkg-utils": "^7.2.2",
+    "@sanity/prettier-config": "^1.0.3",
+    "@vitest/coverage-v8": "3.1.1",
+    "eslint": "^9.22.0",
+    "groq-js": "^1.16.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.4",
+    "vitest": "^3.1.1",
+    "@repo/config-test": "0.0.1",
+    "@repo/package.config": "0.0.1",
+    "@repo/tsconfig": "0.0.1",
+    "@repo/config-eslint": "0.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pkg build --strict --clean --check",
+    "clean": "rimraf dist",
+    "dev": "pkg watch",
+    "docs": "typedoc --out docs --tsconfig ./tsconfig.dist.json",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "ts:check": "tsc --noEmit"
+  }
+}
