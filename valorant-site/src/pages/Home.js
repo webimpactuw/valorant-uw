@@ -257,10 +257,22 @@ function PlaySection({ play }) {
           </div>
         </div>
         {/* Right half of section */}
-        <div>
-          <div className="uppercase font-bold font-dinish text-[40px] text-accent-dark leading-none">Upcoming Events</div>
+        <div className="flex flex-col gap-8 font-dinish">
+          <div className="uppercase font-bold text-[40px] text-accent-dark leading-none">Upcoming Events</div>
+          {/* Next event box - text and image to be replaced with database events */}
+          <div className="w-[494px] h-96 bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
+            <img alt="Placeholder event poster" className="w-full h-full"></img>
+            <div>
+              <div className="font-extrabold text-2xl text-accent uppercase">Valorant Summer Slam</div>
+              <div className="text-xl">August 20-22</div>
+              <div className="text-xl">12PM PST</div>
+            </div>
+          </div>
+          {/* Button to events page */}
           <Link to="/events">
-            <div>View More Events</div>
+            <div className="border-accent border-2 p-[2px] w-[334px]">
+              <div className="p-2 bg-accent text-off-white uppercase font-bold text-2xl text-center py-2.5">View More Events</div>
+            </div>
           </Link>
         </div>
       </div>
