@@ -187,14 +187,18 @@ function PlaySection({ play }) {
       className="w-full flex justify-center"
     >
       <div className="w-[1440px] h-[745px] grid grid-cols-2 p-24 text-left gap-48">
+        {/* Left half of section */}
         <div className="h-full flex flex-col">
+          {/* Section header */}
           <div className="text-left text-4xl md:text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight mb-4">
             Ways to Play
           </div>
           <div className="uppercase font-bold text-2xl text-lavender font-dinish">
             Events & More
           </div>
+          {/* Three info sections */}
           <div className="divide-y-2 divide-accent flex flex-grow flex-col justify-center text-accent-dark">
+            {/* Play section */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -215,6 +219,7 @@ function PlaySection({ play }) {
                 </div>
               </div>
             </div>
+            {/* Train section */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -230,6 +235,7 @@ function PlaySection({ play }) {
                 </div>
               </div>
             </div>
+            {/* Bond section */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -250,7 +256,9 @@ function PlaySection({ play }) {
             </div>
           </div>
         </div>
+        {/* Right half of section */}
         <div>
+          <div className="uppercase font-bold font-dinish text-[40px] text-accent-dark leading-none">Upcoming Events</div>
           <Link to="/events">
             <div>View More Events</div>
           </Link>
