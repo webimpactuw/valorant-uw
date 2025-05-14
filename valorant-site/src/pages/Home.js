@@ -48,21 +48,21 @@ function HeaderSection() {
           </h1>
 
           {/* nav menu */}
-          <nav className="w-full md:w-[275px] h-center order-2 md:order-1 mt-6 md:mt-0">
+          <nav className="w-full md:w-[275px] h-center order-2 md:order-1 mt-0">
             <ul className="flex flex-col items-start md:items-end justify-center space-y-4">
-              <li className="font-DINish font-bold text-2xl md:text-3xl lg:text-4xl relative group">
+              <li className="font-DINish font-bold text-3xl lg:text-4xl relative group">
                 <a href="#join" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300" >JOIN A GAME</a>
               </li>
-              <li className="font-DINish font-bold text-2xl md:text-3xl lg:text-4xl relative group">
+              <li className="font-DINish font-bold text-3xl lg:text-4xl relative group">
                 <a href="#about" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300" >ABOUT</a>
               </li>
-              <li className="font-DINish font-bold text-2xl md:text-3xl lg:text-4xl relative group">
+              <li className="font-DINish font-bold text-3xl lg:text-4xl relative group">
                 <a href="#play" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300">WAYS TO PLAY</a>
               </li>
-              <li className="font-DINish font-bold text-2xl md:text-3xl lg:text-4xl relative group">
+              <li className="font-DINish font-bold text-3xl lg:text-4xl relative group">
                 <a href="#officers" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300">OFFICERS</a>
               </li>
-              <li className="font-DINish font-bold text-2xl md:text-3xl lg:text-4xl relative group">
+              <li className="font-DINish font-bold text-3xl lg:text-4xl relative group">
                 <a href="#sponsors" className="text-black no-underline tracking-[-0.03em] group-hover:text-[#D6CCF5] transition-colors duration-300">SPONSORS</a>
               </li>
             </ul>
@@ -100,7 +100,7 @@ function JoinSection() {
         }}>
       <div className="absolute inset-0 bg-purple-950/20 z-5"/>
       <div className="flex flex-col items-center justify-center h-full py-16 z-10">
-        <div className="text-center text-4xl md:text-5xl lg:text-7xl font-normal font-['Anton_SC'] uppercase leading-tight mb-8" style={{
+        <div className="text-center text-5xl lg:text-7xl font-normal font-['Anton_SC'] uppercase leading-tight mb-8" style={{
           color: "#E9CB88"}}>
           JOIN A GAME
         </div>

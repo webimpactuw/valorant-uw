@@ -17,6 +17,7 @@ import Killjoy from '../assets/operator_portraits/Killjoy.png';
 import Omen from '../assets/operator_portraits/Omen.png';
 import Sova from '../assets/operator_portraits/Sova.png';
 import Placeholder from '../assets/officer_portraits/Placeholder.png';
+import { useEffect } from 'react';
 
 const marketingOfficerList = [
   {
@@ -97,6 +98,9 @@ const esportsOfficerList = [
 ]
 
 function Officers() {
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: "instant" });
+}, []);
     return (
       <>
         <div className="relative overflow-hidden max-w-full bg-contain bg-repeat" style={{ backgroundImage: "url('/dot_overlay.png')" }}>

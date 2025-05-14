@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-import './Header.css';
 import logo from '../../assets/valorant_at_uw_logo.svg';
 
 function Header() {
     return (
-        <header className="header">
-            <div><Link to="/"><img src={logo} alt='Logo' height={55} width={55}></img></Link></div>
-            <div className="directory">
-                <Link to="/">HOME</Link>
-                <Link to="/events">EVENTS</Link>
-                <Link to="/officers">OFFICERS</Link>
+        <div className="w-full h-16 relative bg-[#4C0080] overflow-hidden flex items-center justify-between px-14">
+            <Link to="/"><img className="w-12 h-center left-[0.875rem] top-[0.5rem] absolute rounded-[51px]" src={logo}/></Link>
+            <div className="flex justify-end items-center gap-14 px-4">
+                <div className="justify-start text-white text-2xl font-extrabold font-['DINish'] uppercase"><Link to="/">HOME</Link></div>
+                <div className="justify-start text-white text-2xl font-extrabold font-['DINish'] uppercase"><Link to="/events">EVENTS</Link></div>
+                <div className="justify-start text-white text-2xl font-extrabold font-['DINish'] uppercase"><Link to="/officers">OFFICERS</Link></div>
             </div>
-        </header>
+        </div>
     );
 }
 
