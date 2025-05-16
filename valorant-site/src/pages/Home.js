@@ -112,9 +112,7 @@ function JoinSection() {
             <Link to="https://discord.com/invite/CBGmfamqvk" target="_blank" rel="noopener noreferrer" className="block w-full">
               <div 
                 data-property-1="Default" 
-                className="relative w-full h-[60px] md:h-[70px] lg:h-[83px] md:px-8 lg:px-24 px-4 py-4 bg-button-fill flex justify-center items-center gap-3 md:gap-5 group border-2 border-transparent hover:border-white transition-colors duration-300" 
-                style={{
-                  backgroundColor: "#4C0080"}}
+                className="relative bg-accent w-full h-[60px] md:h-[70px] lg:h-[83px] md:px-8 lg:px-24 px-4 py-4 bg-button-fill flex justify-center items-center gap-3 md:gap-5 group border-2 border-transparent hover:border-white transition-colors duration-300" 
               >
                   {/* white overlay when hovering */}
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none z-20"/>
