@@ -6,7 +6,12 @@ import scrollArrow from '../assets/scroll-arrow-icon.svg' /*scroll icon for head
 import Background from "../assets/join_a_game_bg.jpeg" /*background photo for join*/
 import discord from '../assets/Discord-Symbol-White.svg' /*discord icon for join*/
 import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, about, play, officers*/
-import eventPoster from '../assets/placeholder_event_poster.png'; /* event poster play section, to be replaced */
+import officerOne from '../assets/officer_portraits/AnshChavda.jpg' /* first officer portrait for officers */
+import officerTwo from '../assets/officer_portraits/DavidPham.jpg' /* second officer portrait for officers */
+import officerThree from '../assets/officer_portraits/DianeLazo.jpg' /* third officer portrait for officers */
+import officersBackground from '../assets/backgrounds/OFFICERS BACKGROUND.png' /* background for officers */
+
+import eventPoster from '../assets/placeholder_event_poster.png'; /* event poster for play, to be replaced */
 
 function Home() {
     return (
@@ -287,15 +292,34 @@ function OfficersSection({ officers }) {
   return (
     <section
     id="officers" 
-    className="w-full flex justify-center" style={{backgroundColor: "#E9CB88"}}
+    className="w-full flex justify-center relative"
     >
-      <div className="
-      w-[1440px]
-      h-[568px]
-      ">Officers</div>
-      <Link to="/officers">
-        <div>Meet the Squad</div>
-      </Link>
+      <img src={officersBackground} alt="officers section background of dot pattern and text saying 'lead'" className="absolute z-0 w-[1440px] h-[568px] object-cover object-left"/>
+      <div className="w-[1440px] h-[568px] p-24 z-10 flex justify-between text-left gap-14">
+        <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col gap-3">
+            <div className="text-left text-4xl md:text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">Officers</div>
+            <div className="uppercase font-bold text-2xl text-accent-dark font-dinish">Who are we?</div>
+            <div className="text-xl text-accent-dark font-medium">Our officers are the backbone of our organization, managing the club, hosting events, and creating a space that anyone feels welcome to join.</div>
+          </div>
+          <Link to="/officers">
+            <div className="group border-accent hover:border-lavender border-2 p-[2px] w-[334px]">
+              <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">Meet the Squad</div>
+            </div>
+          </Link>
+        </div>
+        <div className="relative w-[617px] flex-shrink-0 mx-6">
+          <div className="absolute border-lavender border-2 p-[10px] box-border overflow-hidden z-10 top-0 left-0">
+            <img src={officerOne} alt="officer Ansh Chavda" className="object-cover object-center h-[232px] w-[232px]" />
+          </div>
+          <div className="absolute border-lavender border-2 p-[10px] box-border overflow-hidden z-20 left-[166px] bottom-0">
+            <img src={officerTwo} alt="officer Ansh Chavda" className="object-cover object-center h-[232px] w-[232px]" />
+          </div>
+          <div className="absolute border-lavender border-2 p-[10px] box-border overflow-hidden z-10 top-0 right-0">
+            <img src={officerThree} alt="officer Ansh Chavda" className="object-cover object-center h-[232px] w-[232px]" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
