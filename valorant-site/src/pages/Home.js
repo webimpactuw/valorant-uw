@@ -6,6 +6,7 @@ import scrollArrow from '../assets/scroll-arrow-icon.svg' /*scroll icon for head
 import Background from "../assets/join_a_game_bg.jpeg" /*background photo for join*/
 import discord from '../assets/Discord-Symbol-White.svg' /*discord icon for join*/
 import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, about, play, officers*/
+import eventPoster from '../assets/placeholder_event_poster.png'; /* event poster play section, to be replaced */
 
 function Home() {
     return (
@@ -184,9 +185,10 @@ function PlaySection({ play }) {
   return (
     <section 
       id="play"
-      className="w-full flex justify-center"
+      className="w-full flex justify-center relative"
     >
-      <div className="w-[1440px] h-[745px] grid grid-cols-2 p-24 text-left gap-48">
+      <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[59px] left-[65px]"/>
+      <div className="w-[1440px] h-[745px] grid grid-cols-2 p-24 text-left gap-48 z-10">
         {/* Left half of section */}
         <div className="h-full flex flex-col">
           {/* Section header */}
@@ -196,9 +198,9 @@ function PlaySection({ play }) {
           <div className="uppercase font-bold text-2xl text-lavender font-dinish">
             Events & More
           </div>
-          {/* Three info sections */}
+          {/* Three info lines */}
           <div className="divide-y-2 divide-accent flex flex-grow flex-col justify-center text-accent-dark">
-            {/* Play section */}
+            {/* Play line */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -219,7 +221,7 @@ function PlaySection({ play }) {
                 </div>
               </div>
             </div>
-            {/* Train section */}
+            {/* Train line */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -235,7 +237,7 @@ function PlaySection({ play }) {
                 </div>
               </div>
             </div>
-            {/* Bond section */}
+            {/* Bond line */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -261,7 +263,7 @@ function PlaySection({ play }) {
           <div className="uppercase font-bold text-[40px] text-accent-dark leading-none">Upcoming Events</div>
           {/* Next event box - text and image to be replaced with database events */}
           <div className="w-[494px] h-96 bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
-            <img alt="Placeholder event poster" className="w-full h-full"></img>
+            <img src={eventPoster} alt="Placeholder event poster" className="w-full bg-white overflow-hidden object-cover object-top"></img>
             <div>
               <div className="font-extrabold text-2xl text-accent uppercase">Valorant Summer Slam</div>
               <div className="text-xl">August 20-22</div>
@@ -270,8 +272,8 @@ function PlaySection({ play }) {
           </div>
           {/* Button to events page */}
           <Link to="/events">
-            <div className="border-accent border-2 p-[2px] w-[334px]">
-              <div className="p-2 bg-accent text-off-white uppercase font-bold text-2xl text-center py-2.5">View More Events</div>
+            <div className="group border-accent hover:border-lavender border-2 p-[2px] w-[334px]">
+              <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">View More Events</div>
             </div>
           </Link>
         </div>
