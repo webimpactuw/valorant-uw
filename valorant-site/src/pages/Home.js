@@ -190,12 +190,12 @@ function PlaySection({ play }) {
   return (
     <section 
       id="play"
-      className="w-full flex justify-center relative"
+      className="w-full flex justify-center relative bg-off-white"
     >
       <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[59px] left-[65px]"/>
-      <div className="w-[1440px] h-[745px] grid grid-cols-2 p-24 text-left gap-48 z-10">
+      <div className="w-full h-[745px] flex justify-between p-24 text-left z-10">
         {/* Left half of section */}
-        <div className="h-full flex flex-col">
+        <div className="h-full flex flex-col w-[529px] mr-12 flex-shrink-0">
           {/* Section header */}
           <div className="text-left text-4xl md:text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight mb-4">
             Ways to Play
@@ -204,7 +204,7 @@ function PlaySection({ play }) {
             Events & More
           </div>
           {/* Three info lines */}
-          <div className="divide-y-2 divide-accent flex flex-grow flex-col justify-center text-accent-dark">
+          <div className="divide-y-2 divide-accent flex flex-grow flex-col justify-center text-accent-dark whitespace-nowrap">
             {/* Play line */}
             <div className="flex items-center py-6">
               <div className="flex items-center w-1/2 gap-7">
@@ -216,12 +216,12 @@ function PlaySection({ play }) {
               <div className="flex flex-col w-1/2 text-xl gap-2.5">
                 <div className="flex flex-row items-center gap-2">
                   <div>Tournaments</div> 
-                  <div className=" w-1 h-1 bg-black"/>
+                  <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
                   <div>10-Mans</div>
                 </div>
                 <div className="flex flex-row items-center gap-2">
                   <div>Esports</div> 
-                  <div className=" w-1 h-1 bg-black"/>
+                  <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
                   <div>Looking for groups</div>
                 </div>
               </div>
@@ -237,7 +237,7 @@ function PlaySection({ play }) {
               <div className="flex flex-col w-1/2 text-xl gap-2.5">
                 <div className="flex flex-row items-center gap-2">
                   <div>Workshops</div> 
-                  <div className=" w-1 h-1 bg-black"/>
+                  <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
                   <div>VOD review</div>
                 </div>
               </div>
@@ -253,7 +253,7 @@ function PlaySection({ play }) {
               <div className="flex flex-col w-1/2 text-xl gap-2.5">
                 <div className="flex flex-row items-center gap-2">
                   <div>Socials</div> 
-                  <div className=" w-1 h-1 bg-black"/>
+                  <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
                   <div>Watch parties</div>
                 </div>
                 <div className="flex flex-row items-center gap-2">
@@ -264,7 +264,7 @@ function PlaySection({ play }) {
           </div>
         </div>
         {/* Right half of section */}
-        <div className="flex flex-col gap-8 font-dinish">
+        <div className="flex flex-col gap-8 font-dinish mx-6 flex-shrink">
           <div className="uppercase font-bold text-[40px] text-accent-dark leading-none">Upcoming Events</div>
           {/* Next event box - text and image to be replaced with database events */}
           <div className="w-[494px] h-96 bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
@@ -283,7 +283,6 @@ function PlaySection({ play }) {
           </Link>
         </div>
       </div>
-      
     </section>
   );
 }
@@ -295,7 +294,7 @@ function OfficersSection({ officers }) {
     className="w-full flex justify-center relative"
     >
       <img src={officersBackground} alt="officers section background of dot pattern and text saying 'lead'" className="absolute z-0 w-[1440px] h-[568px] object-cover object-left"/>
-      <div className="w-[1440px] h-[568px] p-24 z-10 flex justify-between text-left gap-14">
+      <div className="w-full h-[568px] p-24 z-10 flex justify-between text-left gap-14">
         <div className="flex flex-col justify-between h-full">
           <div className="flex flex-col gap-3">
             <div className="text-left text-4xl md:text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">Officers</div>
