@@ -190,30 +190,33 @@ function PlaySection({ play }) {
   return (
     <section 
       id="play"
-      className="w-full flex justify-center relative bg-off-white"
+      className="w-full flex justify-center relative bg-off-white overflow-hidden"
     >
       <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[59px] left-[65px]"/>
-      <div className="w-full h-[745px] flex justify-between p-24 text-left z-10">
+      <div className="w-full lg:h-[745px] flex justify-between items-center lg:items-start lg:flex-row flex-col lg:py-24 lg:px-24 px-12 py-[72px] text-left z-10 gap-5 md:gap-10 lg:gap-0">
         {/* Left half of section */}
-        <div className="h-full flex flex-col w-[529px] mr-12 flex-shrink-0">
+        <div className="lg:h-full flex flex-col sm:w-[297px] md:w-[410px] lg:w-[529px] lg:mr-12 flex-shrink-0 gap-5 lg:gap-0">
           {/* Section header */}
-          <div className="text-left text-4xl md:text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight mb-4">
-            Ways to Play
-          </div>
-          <div className="uppercase font-bold text-2xl text-lavender font-dinish">
-            Events & More
+          <div className="flex flex-col lg:gap-4 gap-2">
+            <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">
+              Ways to Play
+            </div>
+            <div className="uppercase font-bold text-2xl text-lavender font-dinish">
+              Events & More
+            </div>
           </div>
           {/* Three info lines */}
           <div className="divide-y-2 divide-accent flex flex-grow flex-col justify-center text-accent-dark whitespace-nowrap">
             {/* Play line */}
             <div className="flex items-center py-6">
-              <div className="flex items-center w-1/2 gap-7">
-                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <div className="flex items-center md:w-1/2 gap-5 lg:gap-7 mr-6 md:mr-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" className="w-9 h-9 lg:w-14 lg:h-14">
                   <path d="M8 8L24.6667 53L33 34.1377L53 28.2096L8 8Z" stroke="#3B0361" stroke-width="3" stroke-linejoin="round"/>
                 </svg>
-                <div className="uppercase font-bold font-dinish text-[40px]">Play</div>
+                <div className="uppercase font-bold font-dinish text-3xl lg:text-[40px] hidden md:block">Play</div>
               </div>
-              <div className="flex flex-col w-1/2 text-xl gap-2.5">
+              <div className="flex flex-col md:w-1/2 text-base lg:text-xl gap-2.5">
+              <div className="uppercase font-bold font-dinish text-3xl md:hidden">Play</div>
                 <div className="flex flex-row items-center gap-2">
                   <div>Tournaments</div> 
                   <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
@@ -228,13 +231,14 @@ function PlaySection({ play }) {
             </div>
             {/* Train line */}
             <div className="flex items-center py-6">
-              <div className="flex items-center w-1/2 gap-7">
-                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <div className="flex items-center md:w-1/2 gap-5 lg:gap-7 mr-6 md:mr-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" className="w-9 h-9 lg:w-14 lg:h-14">
                   <path d="M51 28.5H42M15 28.5H6M28.5 15V6M28.5 51V42M46.5 28.5C46.5 38.4411 38.4411 46.5 28.5 46.5C18.5589 46.5 10.5 38.4411 10.5 28.5C10.5 18.5589 18.5589 10.5 28.5 10.5C38.4411 10.5 46.5 18.5589 46.5 28.5ZM35.25 28.5C35.25 32.2279 32.2279 35.25 28.5 35.25C24.7721 35.25 21.75 32.2279 21.75 28.5C21.75 24.7721 24.7721 21.75 28.5 21.75C32.2279 21.75 35.25 24.7721 35.25 28.5Z" stroke="#3B0361" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <div className="uppercase font-bold font-dinish text-[40px]">Train</div>
+                <div className="uppercase font-bold font-dinish text-3xl lg:text-[40px] hidden md:block">Train</div>
               </div>
-              <div className="flex flex-col w-1/2 text-xl gap-2.5">
+              <div className="flex flex-col md:w-1/2 text-base lg:text-xl gap-2.5">
+                <div className="uppercase font-bold font-dinish text-3xl md:hidden">Train</div>
                 <div className="flex flex-row items-center gap-2">
                   <div>Workshops</div> 
                   <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
@@ -244,13 +248,14 @@ function PlaySection({ play }) {
             </div>
             {/* Bond line */}
             <div className="flex items-center py-6">
-              <div className="flex items-center w-1/2 gap-7">
-                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <div className="flex items-center md:w-1/2 gap-5 lg:gap-7 mr-6 md:mr-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" className="w-9 h-9 lg:w-14 lg:h-14">
                   <path d="M28.5 6C34.1279 12.1613 37.3262 20.1571 37.5 28.5C37.3262 36.8429 34.1279 44.8387 28.5 51M28.5 6C22.8721 12.1613 19.6738 20.1571 19.5 28.5C19.6738 36.8429 22.8721 44.8387 28.5 51M28.5 6C16.0736 6 6 16.0736 6 28.5C6 40.9264 16.0736 51 28.5 51M28.5 6C40.9264 6 51 16.0736 51 28.5C51 40.9264 40.9264 51 28.5 51M7.12504 21.75H49.875M7.125 35.25H49.875" stroke="#3B0361" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <div className="uppercase font-bold font-dinish text-[40px]">Bond</div>
+                <div className="uppercase font-bold font-dinish text-3xl lg:text-[40px] hidden md:block">Bond</div>
               </div>
-              <div className="flex flex-col w-1/2 text-xl gap-2.5">
+              <div className="flex flex-col md:w-1/2 text-base lg:text-xl gap-2.5">
+                <div className="uppercase font-bold font-dinish text-3xl md:hidden">Bond</div>
                 <div className="flex flex-row items-center gap-2">
                   <div>Socials</div> 
                   <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
@@ -264,20 +269,20 @@ function PlaySection({ play }) {
           </div>
         </div>
         {/* Right half of section */}
-        <div className="flex flex-col gap-8 font-dinish mx-6 flex-shrink">
-          <div className="uppercase font-bold text-[40px] text-accent-dark leading-none">Upcoming Events</div>
+        <div className="flex flex-col lg:gap-8 gap-5 font-dinish lg:mx-6 w-[297px] md:w-[410px] lg:w-auto">
+          <div className="uppercase font-bold text-3xl lg:text-[40px] text-accent-dark leading-none">Upcoming Events</div>
           {/* Next event box - text and image to be replaced with database events */}
-          <div className="w-[494px] h-96 bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
+          <div className="h-[272px] md:h-[330px] md:w-full lg:w-[494px] lg:h-96 bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
             <img src={eventPoster} alt="Placeholder event poster" className="w-full bg-white overflow-hidden object-cover object-top"></img>
             <div>
-              <div className="font-extrabold text-2xl text-accent uppercase">Valorant Summer Slam</div>
-              <div className="text-xl">August 20-22</div>
-              <div className="text-xl">12PM PST</div>
+              <div className="font-extrabold text-xl lg:text-2xl text-accent uppercase">Valorant Summer Slam</div>
+              <div className="text-base lg:text-xl">August 20-22</div>
+              <div className="text-base lg:text-xl">12PM PST</div>
             </div>
           </div>
           {/* Button to events page */}
           <Link to="/events">
-            <div className="group border-accent hover:border-lavender border-2 p-[2px] w-[334px]">
+            <div className="group border-accent hover:border-lavender border-2 p-[2px] w-full lg:w-[334px]">
               <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">View More Events</div>
             </div>
           </Link>
@@ -297,7 +302,7 @@ function OfficersSection({ officers }) {
       <div className="w-full h-[568px] p-24 z-10 flex justify-between text-left gap-14">
         <div className="flex flex-col justify-between h-full">
           <div className="flex flex-col gap-3">
-            <div className="text-left text-4xl md:text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">Officers</div>
+            <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">Officers</div>
             <div className="uppercase font-bold text-2xl text-accent-dark font-dinish">Who are we?</div>
             <div className="text-xl text-accent-dark font-medium">Our officers are the backbone of our organization, managing the club, hosting events, and creating a space that anyone feels welcome to join.</div>
           </div>
