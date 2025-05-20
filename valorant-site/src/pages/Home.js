@@ -195,7 +195,7 @@ function PlaySection({ play }) {
       <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[59px] left-[65px]"/>
       <div className="w-full lg:h-[745px] flex justify-between items-center lg:items-start lg:flex-row flex-col lg:py-24 lg:px-24 px-12 py-[72px] text-left z-10 gap-5 md:gap-10 lg:gap-0">
         {/* Left half of section */}
-        <div className="lg:h-full flex flex-col sm:w-[297px] md:w-[410px] lg:w-[529px] lg:mr-12 flex-shrink-0 gap-5 lg:gap-0">
+        <div className="lg:h-full flex flex-col w-[297px] md:w-[410px] lg:w-[529px] lg:mr-12 flex-shrink-0 gap-5 lg:gap-0">
           {/* Section header */}
           <div className="flex flex-col lg:gap-4 gap-2">
             <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">
@@ -296,31 +296,35 @@ function OfficersSection({ officers }) {
   return (
     <section
     id="officers" 
-    className="w-full flex justify-center relative"
+    className="w-full flex justify-center relative bg-lavender-light overflow-hidden"
     >
-      <img src={officersBackground} alt="officers section background of dot pattern and text saying 'lead'" className="absolute z-0 w-[1440px] h-[568px] object-cover object-left"/>
-      <div className="w-full h-[568px] p-24 z-10 flex justify-between text-left gap-14">
-        <div className="flex flex-col justify-between h-full">
+      <img src={officersBackground} alt="Officers section background. Dot pattern and text saying 'lead'." className="absolute z-0 w-[1440px] h-[568px] object-cover object-left"/>
+      <div className="w-full lg:h-[568px] lg:px-24 lg:py-24 px-12 py-[72px] z-10 flex flex-col items-center lg:flex-row lg:justify-between text-left gap-12 lg:gap-14">
+        {/* Left section */}
+        <div className="flex flex-col lg:justify-between gap-9 lg:gap-0 h-full w-[297px] lg:w-auto">
+          {/* Info text */}
           <div className="flex flex-col gap-3">
             <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">Officers</div>
             <div className="uppercase font-bold text-2xl text-accent-dark font-dinish">Who are we?</div>
-            <div className="text-xl text-accent-dark font-medium">Our officers are the backbone of our organization, managing the club, hosting events, and creating a space that anyone feels welcome to join.</div>
+            <div className="text-base lg:text-xl text-accent-dark font-medium">Our officers are the backbone of our organization, managing the club, hosting events, and creating a space that anyone feels welcome to join.</div>
           </div>
+          {/* Officers page button */}
           <Link to="/officers">
-            <div className="group border-accent hover:border-lavender border-2 p-[2px] w-[334px]">
+            <div className="group border-accent hover:border-lavender border-2 p-[2px] lg:w-[334px] w-full">
               <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">Meet the Squad</div>
             </div>
           </Link>
         </div>
-        <div className="relative w-[617px] flex-shrink-0 mx-6">
-          <div className="absolute border-lavender border-2 p-[10px] box-border overflow-hidden z-10 top-0 left-0">
-            <img src={officerOne} alt="officer Ansh Chavda" className="object-cover object-center h-[232px] w-[232px]" />
+        {/* Three officer images */}
+        <div className="relative h-[216px] w-[297px] lg:h-full lg:w-[617px] flex-shrink-0 lg:mx-6">
+          <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-10 top-0 left-0">
+            <img src={officerOne} alt="officer Ansh Chavda" className="object-cover object-center h-[120px] lg:h-[232px] w-[120px] lg:w-[232px]" />
           </div>
-          <div className="absolute border-lavender border-2 p-[10px] box-border overflow-hidden z-20 left-[166px] bottom-0">
-            <img src={officerTwo} alt="officer Ansh Chavda" className="object-cover object-center h-[232px] w-[232px]" />
+          <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-20 left-[84px] lg:left-[166px] bottom-0">
+            <img src={officerTwo} alt="officer David Pham" className="object-cover object-center h-[120px] lg:h-[232px] w-[120px] lg:w-[232px]" />
           </div>
-          <div className="absolute border-lavender border-2 p-[10px] box-border overflow-hidden z-10 top-0 right-0">
-            <img src={officerThree} alt="officer Ansh Chavda" className="object-cover object-center h-[232px] w-[232px]" />
+          <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-10 top-0 right-0">
+            <img src={officerThree} alt="officer Diane Lazo" className="object-cover object-center h-[120px] lg:h-[232px] w-[120px] lg:w-[232px]" />
           </div>
         </div>
       </div>
