@@ -7,7 +7,6 @@ import Background from "../assets/join_a_game_bg.jpeg" /*background photo for jo
 import discord from '../assets/Discord-Symbol-White.svg' /*discord icon for join*/
 import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, about, play, officers*/
 import headerBackground from '../assets/backgrounds/HOMEPAGE_BACKGROUND.png'; /*header background*/
-
 function Home() {
     return (
       <div className="home">
