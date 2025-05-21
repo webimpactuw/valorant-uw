@@ -1,30 +1,35 @@
-import React, {useEffect, useRef} from 'react'
+
+import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
-import eg from './/assets/valorant_sponsors/evil_geniuses_sponsor.png'
-import ifinikey from './/assets/valorant_sponsors/infinikey_sponsor.png'
-import  redbull from './/assets/valorant_sponsors/redbull_sponsor.png'
-import tsm from './/assets/valorant_sponsors/tsm_sponsor.png'
+import AutoScroll from 'embla-carousel-auto-scroll'
 import './Carousel.css'; 
-export function EmblaCarousel() {
-  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()])
-  const images = [eg,ifinikey,redbull,tsm]
-  const autoplay = useRef(
-    Autoplay({delay: 500, stopOnInteraction: false}) 
-  )
+const EmblaCarousel = (props) => {
+  const { slides, options } = props
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    AutoScroll({stopOnInteraction: false, draggable: false})
+  ])
   useEffect(() => {
-    return () => autoplay.current.stop();
-  }, []);
+    const autoScroll = emblaApi?.plugins()?.autoScroll
+    if (!autoScroll) return
+  }, [emblaApi])
 
   return (
-    <div className="embla" ref={emblaRef}>
-      <div className="embla__container">
-        {images.map((src, index) => (
-          <div className="embla__slide" key={index}>
-            <img src={src} alt={`Slide ${index + 1}`} />
+    <div className="embla">
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container">
+          {slides.map((src,index) => (
+            <div className="embla__slide" key={index}>
+            <img
+              src={src}
+              alt={`Slide ${index + 1}`}
+              className="embla__slide__img"
+            />
           </div>
-        ))}
+          ))}
+        </div>
+      </div>   
       </div>
-    </div>
-  );
+  )
 }
+
+export default EmblaCarousel

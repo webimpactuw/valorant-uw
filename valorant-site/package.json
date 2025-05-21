@@ -5,6 +5,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.3",
     "cra-template": "1.2.0",
+    "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "headlessui": "^0.0.0",
