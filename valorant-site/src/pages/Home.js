@@ -9,10 +9,10 @@ import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, abo
 import officerOne from '../assets/officer_portraits/AnshChavda.jpg' /* first officer portrait for officers */
 import officerTwo from '../assets/officer_portraits/DavidPham.jpg' /* second officer portrait for officers */
 import officerThree from '../assets/officer_portraits/DianeLazo.jpg' /* third officer portrait for officers */
-import officersBackground from '../assets/backgrounds/OFFICERS BACKGROUND.png' /* background for officers */
-
+import officersBackground from '../assets/backgrounds/OFFICERS_BACKGROUND.png' /* background for officers */
 import eventPoster from '../assets/placeholder_event_poster.png'; /* event poster for play, to be replaced */
 import headerBackground from '../assets/backgrounds/HOMEPAGE_BACKGROUND.png'; /*header background*/
+
 function Home() {
     return (
       <div className="home">
