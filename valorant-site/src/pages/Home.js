@@ -4,7 +4,7 @@ import './Home.css';
 import StickyNavBar from "../components/sticky-nav"; /*sticky nav bar*/
 import scrollArrow from '../assets/scroll-arrow-icon.svg' /*scroll icon for header*/
 import Background from "../assets/join_a_game_bg.jpeg" /*background photo for join*/
-import discord from '../assets/Discord-Symbol-White.svg' /*discord icon for join*/
+import discord from '../assets/discord-icon.svg' /*discord icon for join*/
 import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, about, play, officers*/
 import headerBackground from '../assets/backgrounds/HOMEPAGE_BACKGROUND.png'; /*header background*/
 
