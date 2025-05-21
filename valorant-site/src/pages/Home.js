@@ -160,7 +160,7 @@ function PlaySection({ play }) {
       id="play"
       className="w-full flex justify-center relative bg-off-white overflow-hidden"
     >
-      <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[59px] left-[65px]"/>
+      <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[59px] left-[65px] w-[942px] h-[788px] object-cover object-left"/>
       <div className="w-full lg:h-[745px] flex justify-between items-center lg:items-start lg:flex-row flex-col lg:py-24 lg:px-24 px-12 py-[72px] text-left z-10 gap-5 md:gap-10 lg:gap-0">
         {/* Left half of section */}
         <div className="lg:h-full flex flex-col w-[297px] md:w-[410px] lg:w-[529px] lg:mr-12 flex-shrink-0 gap-5 lg:gap-0">
@@ -266,8 +266,9 @@ function OfficersSection({ officers }) {
     id="officers" 
     className="w-full flex justify-center relative bg-lavender-light overflow-hidden"
     >
-      <img src={officersBackground} alt="Officers section background. Dot pattern and text saying 'lead'." className="absolute z-0 w-[1440px] h-[568px] object-cover object-left"/>
-      <div className="w-full lg:h-[568px] lg:px-24 lg:py-24 px-12 py-[72px] z-10 flex flex-col items-center lg:flex-row lg:justify-between text-left gap-12 lg:gap-14">
+      <img src={officersBackground} alt="Officers section background. Large text saying 'lead'." className="absolute z-20 w-[1440px] h-[568px] object-cover object-left"/>
+      <img src={dotPattern} alt="play section dot pattern overlay" className="absolute z-0 top-[58px] left-[71px] w-[942px] h-[788px] object-cover object-left opacity-60"/>
+      <div className="w-full lg:h-[568px] lg:px-24 lg:py-24 px-12 py-[72px] z-30 flex flex-col items-center lg:flex-row lg:justify-between text-left gap-12 lg:gap-14">
         {/* Left section */}
         <div className="flex flex-col lg:justify-between gap-9 lg:gap-0 h-full w-[297px] md:w-[410px] lg:w-auto">
           {/* Info text */}
