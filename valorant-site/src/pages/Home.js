@@ -269,7 +269,7 @@ function OfficersSection({ officers }) {
       <img src={officersBackground} alt="Officers section background. Dot pattern and text saying 'lead'." className="absolute z-0 w-[1440px] h-[568px] object-cover object-left"/>
       <div className="w-full lg:h-[568px] lg:px-24 lg:py-24 px-12 py-[72px] z-10 flex flex-col items-center lg:flex-row lg:justify-between text-left gap-12 lg:gap-14">
         {/* Left section */}
-        <div className="flex flex-col lg:justify-between gap-9 lg:gap-0 h-full w-[297px] lg:w-auto">
+        <div className="flex flex-col lg:justify-between gap-9 lg:gap-0 h-full w-[297px] md:w-[410px] lg:w-auto">
           {/* Info text */}
           <div className="flex flex-col gap-3">
             <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">Officers</div>
@@ -284,15 +284,15 @@ function OfficersSection({ officers }) {
           </Link>
         </div>
         {/* Three officer images */}
-        <div className="relative h-[216px] w-[297px] lg:h-full lg:w-[617px] flex-shrink-0 lg:mx-6">
+        <div className="relative h-[216px] md:h-[289px] w-[297px] md:w-[410px] lg:h-full lg:w-[617px] flex-shrink-0 lg:mx-6">
           <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-10 top-0 left-0">
-            <img src={officerOne} alt="officer Ansh Chavda" className="object-cover object-center h-[120px] lg:h-[232px] w-[120px] lg:w-[232px]" />
+            <img src={officerOne} alt="officer Ansh Chavda" className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
           </div>
-          <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-20 left-[84px] lg:left-[166px] bottom-0">
-            <img src={officerTwo} alt="officer David Pham" className="object-cover object-center h-[120px] lg:h-[232px] w-[120px] lg:w-[232px]" />
+          <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-20 left-[84px] md:left-[105px] lg:left-[166px] bottom-0">
+            <img src={officerTwo} alt="officer David Pham" className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
           </div>
           <div className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-10 top-0 right-0">
-            <img src={officerThree} alt="officer Diane Lazo" className="object-cover object-center h-[120px] lg:h-[232px] w-[120px] lg:w-[232px]" />
+            <img src={officerThree} alt="officer Diane Lazo" className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
           </div>
         </div>
       </div>
