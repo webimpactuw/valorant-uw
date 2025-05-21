@@ -23,6 +23,7 @@ module.exports = {
         },
         'lavender': {
           DEFAULT: '#9987D0',
+          light: '#E2DCE8',
           pale: 'rgba(153, 135, 208, .2)'
         }
       }
