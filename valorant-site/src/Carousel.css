@@ -5,8 +5,11 @@
   display: flex;
   gap: 1px; 
 }
-.embla__slide {
+.embla__slide{
   flex: 0 0 100%;
   min-width: 0;  
   
+}
+.embla__slide__img{
+height: 200px;
 }

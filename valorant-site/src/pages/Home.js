@@ -7,6 +7,15 @@ import Background from "../assets/join_a_game_bg.jpeg" /*background photo for jo
 import discord from '../assets/discord-icon.svg' /*discord icon for join*/
 import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, about, play, officers*/
 import headerBackground from '../assets/backgrounds/HOMEPAGE_BACKGROUND.png'; /*header background*/
+import React from 'react';
+import EmblaCarousel from '../EmblaCarousel';
+import eg from '../assets/valorant_sponsors/eg_sponsor.jpg'
+import ifinikey from '../assets/valorant_sponsors/ifk_sponsor.png'
+import  redbull from '../assets/valorant_sponsors/redbull_sponsor.png'
+import tsm from '../assets/valorant_sponsors/tsm_sponsor.svg'
+import msi from '../assets/valorant_sponsors/msi.png'
+import com from '../assets/valorant_sponsors/com.png'
+import razer from '../assets/valorant_sponsors/razer_sponsor.jpg'
 function Home() {
     return (
       <div className="home">
@@ -183,6 +192,8 @@ function OfficersSection({ officers }) {
 }
 
 function SponsorsSection({ sponsors }) {
+  const OPTIONS = {loop: true, draggable: false}
+const SLIDES = [eg,ifinikey,redbull,tsm,msi,com,razer]
   return (
     <section 
     id="sponsors"
@@ -190,7 +201,9 @@ function SponsorsSection({ sponsors }) {
     <div className="
     w-[1440px] 
     h-[466px]"
-    >Sponsors</div>
+    >Sponsors
+    </div>
+    <EmblaCarousel slides={SLIDES} options={OPTIONS} />
     </section>
   );    
 }
