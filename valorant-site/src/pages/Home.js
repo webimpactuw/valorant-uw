@@ -107,38 +107,32 @@ function JoinSection() {
       className="w-full flex justify-center"
     >
     {/* background image for join section */}
-    <div className="w-full relative bg-cover bg-center bg-no-repeat min-h-screen md:min-h-[600px] lg:min-h-[768px]" style={{
+    <div className="w-full relative bg-cover bg-center bg-no-repeat h-[90vh]" style={{
         backgroundImage: "url(" + Background +")",
         backgroundSize: "cover",
         backgroundColor: 'rgba(0,0,0,.6)',
         backgroundBlendMode: 'darken',
         }}>
       <div className="absolute inset-0 bg-purple-950/20 z-5"/>
-      <div className="flex flex-col items-center justify-center h-full py-16 z-10">
-        <div className="text-center text-5xl lg:text-7xl font-normal font-['Anton_SC'] uppercase leading-tight mb-8" style={{
-          color: "#E9CB88"}}>
+      <div className="flex flex-col items-center justify-center h-full py-16 z-10 relative">
+        <div className="text-accent-alt text-center text-5xl lg:text-7xl font-normal font-['Anton_SC'] uppercase leading-tight mb-8 z-5">
           JOIN A GAME
         </div>
         <div className="relative w-full flex justify-center">
-          <div className="relative w-full max-w-xs md:max-w-md lg:w-[505px]">
-            {/* outline surrounding button */}
-            <div className="absolute -inset-1.5 bg-zinc-300/0 outline outline-2 outline-offset-[-1px] outline-white/60"/>
+          <div className="relative w-full max-w-xs md:max-w-md lg:w-[494px]">
             {/* button with discord link */}
             <Link to="https://discord.com/invite/CBGmfamqvk" target="_blank" rel="noopener noreferrer" className="block w-full">
-              <div 
-                data-property-1="Default" 
-                className="relative bg-accent w-full h-[60px] md:h-[70px] lg:h-[83px] md:px-8 lg:px-24 px-4 py-4 bg-button-fill flex justify-center items-center gap-3 md:gap-5 group border-2 border-transparent hover:border-white transition-colors duration-300" 
-              >
-                  {/* white overlay when hovering */}
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none z-20"/>
+              <div data-property-1="Default" className="w-full p-1 bg-white outline outline-2 outline-offset-[-2px] outline-accent inline-flex justify-center items-center gap-5 group">
+                <div className="flex-1 self-stretch py-3 bg-accent flex justify-center items-center gap-5 group-hover:bg-lavender transition-colors duration-300">
                   {/* discord icon */}
-                  <div className="w-10 h-7 relative overflow-hidden flex-shrink-0">
-                      <div className="w-10 h-7 left-0 top-0 absolute"/>
-                      <img src={discord} alt="discord" className="w-full h-full"/>
+                  <div className="w-8 h-6 lg:w-10 lg:h-7 relative overflow-hidden flex-shrink-0">
+                    <div className="w--full h-full left-0 top-0 absolute"/>
+                    <img src={discord} alt="discord" className="w-full h-full"/>
                   </div>
                   <span className="whitespace-nowrap text-text-alt text-xl md:text-2xl lg:text-3xl font-extrabold font-['DINish'] text-white uppercase">
                     VALORANT @ UW
                   </span>
+                </div>
               </div>
             </Link>
           </div>
