@@ -1,11 +1,11 @@
 import React from 'react'
 import logo from '../../assets/valorant_at_uw_logo.svg';
 import { Link } from 'react-router-dom';
-import discord from '../../assets/discord-icon.svg';
-import email from '../../assets/mail-icon.svg';
-import twitch from '../../assets/twitch-icon.svg';
-import instagram from '../../assets/instagram-icon.svg';
-import linkedin from '../../assets/linkedin-icon.svg';
+import discord from '../../assets/icons/discord-icon.svg';
+import email from '../../assets/icons/mail-icon.svg';
+import twitch from '../../assets/icons/twitch-icon.svg';
+import instagram from '../../assets/icons/instagram-icon.svg';
+import linkedin from '../../assets/icons/linkedin-icon.svg';
 
 function Footer(){ 
     return (

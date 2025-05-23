@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import '../index.css'; /*import tailwind css*/
 import './Home.css';
 import StickyNavBar from "../components/sticky-nav"; /*sticky nav bar*/
-import scrollArrow from '../assets/scroll-arrow-icon.svg' /*scroll icon for header*/
+import scrollArrow from '../assets/icons/scroll-arrow-icon.svg' /*scroll icon for header*/
 import Background from "../assets/join_a_game_bg.jpeg" /*background photo for join*/
-import discord from '../assets/discord-icon.svg' /*discord icon for join*/
+import discord from '../assets/icons/discord-icon.svg' /*discord icon for join and about*/
+import mailIcon from '../assets/icons/mail-icon.svg' /*mail icon for about*/
+import instagramIcon from '../assets/icons/instagram-icon.svg' /*instagram icon for about*/
+import twitchIcon from '../assets/icons/twitch-icon.svg' /*twitch icon for about*/
+import linkedinIcon from '../assets/icons/linkedin-icon.svg' /*linkedin icon for about*/
 import dotPattern from '../assets/dot_overlay.svg' /*dot pattern for header, about, play, officers*/
+import aboutBackground from '../assets/backgrounds/ABOUT_BACKGROUND.png' /*background for about*/
+import groupPhoto from '../assets/group_photo.jpg' /*group photo for about*/
 import officerOne from '../assets/officer_portraits/AnshChavda.jpg' /* first officer portrait for officers */
 import officerTwo from '../assets/officer_portraits/DavidPham.jpg' /* second officer portrait for officers */
 import officerThree from '../assets/officer_portraits/DianeLazo.jpg' /* third officer portrait for officers */
@@ -145,15 +151,45 @@ function JoinSection() {
 
 function AboutSection({ about }) {
   return (
-    <section
+    <section 
       id="about"
-      className="w-full flex justify-center"
-      style={{ backgroundColor: '#3B0361'}}
+      className="relative w-full h-[80vh] bg-accent-dark bg-no-repeat bg-cover bg-center flex" style={{
+      backgroundImage: `url(${aboutBackground})`,
+      backgroundSize: "cover"}}
     >
-      <div className="
-        w-[1440px]
-        h-[608px]
-        ">About the Club</div>
+    {/* left half: text */}
+    <div className="">
+      <div className="text-left text-5xl lg:text-7xl text-accent-alt font-normal font-anton-sc uppercase leading-tight">
+        About the club
+      </div>
+      <div className="text-left text-xl lg:text-2xl uppercase text-white font-bold font-dinish">
+        What do we do? 
+      </div>
+      <div className="text-left text-white font-medium font-dinish text-base text-lg lg:text-xl">
+        {/* text about the club */}
+      </div>
+      <div className='inline-flex justify-start items-center gap-5'>
+                <Link to="https://www.linkedin.com/company/valorant-uw/" target='_blank' rel='noopener norefferer'>
+                    <img src={linkedinIcon} alt="linkedin" className='w-6 h-6 lg:w-8 lg:h-8'/>
+                </Link>
+                <Link to="https://discord.com/invite/CBGmfamqvk" target='_blank' rel='noopener norefferer'>
+                    <img src={discord} alt="discord" className='w-6 h-6 lg:w-8 lg:h-8'/>
+                </Link>
+                <Link to="mailto:valorant@uw.edu" target='_blank' rel='noopener norefferer'>
+                    <img src={mailIcon} alt="email" className='w-6 h-6 lg:w-8 lg:h-8'/>
+                </Link>
+                <Link to="https://www.twitch.tv/wgavalorant" target='_blank' rel='noopener norefferer'>
+                    <img src={twitchIcon} alt="twitch" className='w-6 h-6 lg:w-8 lg:h-8'/>
+                </Link>
+                <Link to="https://www.instagram.com/valorant_uw/" target='_blank' rel='noopener norefferer'>
+                    <img src={instagramIcon} alt="instagram" className='w-5 h-5 lg:w-7 lg:h-7'/>
+                </Link>
+        </div>
+    </div>
+    {/* right half: group image */}
+    <div className="">
+      <img src={groupPhoto} alt="Valorant club group photo" className="w-full h-full object-cover object-center"/>
+    </div>
     </section>
   );
 }
@@ -311,7 +347,7 @@ const SLIDES = [eg,ifinikey,redbull,tsm,msi,com,razer]
   return (
     <section 
     id="sponsors"
-    className="w-full flex justify-center">
+    className="w-full flex flex-col items-center">
     <div className="
     w-[1440px] 
     h-[466px]"
