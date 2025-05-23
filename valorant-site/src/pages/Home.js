@@ -153,43 +153,57 @@ function AboutSection({ about }) {
   return (
     <section 
       id="about"
-      className="relative w-full h-[80vh] bg-accent-dark bg-no-repeat bg-cover bg-center flex" style={{
-      backgroundImage: `url(${aboutBackground})`,
-      backgroundSize: "cover"}}
+      className="relative w-full h-80vh bg-accent-dark bg-no-repeat bg-cover bg-center px-6 lg:px-24 pt-24 pb-16 overflow-hidden" 
+      style={{
+        backgroundImage: `url(${aboutBackground})`,
+        backgroundSize: "cover"
+      }}
     >
-    {/* left half: text */}
-    <div className="">
-      <div className="text-left text-5xl lg:text-7xl text-accent-alt font-normal font-anton-sc uppercase leading-tight">
-        About the club
+      <div className="w-full lg:w-[1217px] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 z-10 relative">
+        {/* Left half: text content */}
+        <div className="w-full lg:w-[518px] flex flex-col justify-start items-start gap-2">
+          <div className="text-left text-5xl lg:text-7xl text-accent-alt font-normal font-anton-sc uppercase leading-tight">
+            About the Club
+          </div>
+          <div className="text-left text-xl lg:text-2xl uppercase text-white font-bold font-dinish">
+            What do we do? 
+          </div>
+          <div className="text-left text-white font-medium font-dinish text-base lg:text-xl">
+            This organization is a community of people who enjoy Valorant. 
+            As one of UW's largest single video game communities, we cater to both competitive and casual players. 
+            We host events such as simple and competitive tournaments, watch parties, coaching workshops, and more! 
+            We welcome anyone who would like to play with other gamers from the school to improve or just have a good time. 
+            This is the place to come if you're interested in anything Valorant-related.
+          </div>
+          {/* Social media links */}
+      <div className='inline-flex justify-start items-center gap-5 mt-10 relative z-10'>
+        <Link to="https://www.linkedin.com/company/valorant-uw/" target='_blank' rel='noopener noreferrer'>
+            <img src={linkedinIcon} alt="linkedin" className='w-8 h-8 lg:w-12 lg:h-12'/>
+        </Link>
+        <Link to="https://discord.com/invite/CBGmfamqvk" target='_blank' rel='noopener noreferrer'>
+            <img src={discord} alt="discord" className='w-8 h-8 lg:w-10 lg:h-10'/>
+        </Link>
+        <Link to="mailto:valorant@uw.edu" target='_blank' rel='noopener noreferrer'>
+            <img src={mailIcon} alt="email" className='w-8 h-8 lg:w-12 lg:h-12'/>
+        </Link>
+        <Link to="https://www.twitch.tv/wgavalorant" target='_blank' rel='noopener noreferrer'>
+            <img src={twitchIcon} alt="twitch" className='w-8 h-8 lg:w-9 lg:h-12'/>
+        </Link>
+        <Link to="https://www.instagram.com/valorant_uw/" target='_blank' rel='noopener noreferrer'>
+            <img src={instagramIcon} alt="instagram" className='w-8 h-8 lg:w-10 lg:h-12'/>
+        </Link>
       </div>
-      <div className="text-left text-xl lg:text-2xl uppercase text-white font-bold font-dinish">
-        What do we do? 
-      </div>
-      <div className="text-left text-white font-medium font-dinish text-base text-lg lg:text-xl">
-        {/* text about the club */}
-      </div>
-      <div className='inline-flex justify-start items-center gap-5'>
-                <Link to="https://www.linkedin.com/company/valorant-uw/" target='_blank' rel='noopener norefferer'>
-                    <img src={linkedinIcon} alt="linkedin" className='w-6 h-6 lg:w-8 lg:h-8'/>
-                </Link>
-                <Link to="https://discord.com/invite/CBGmfamqvk" target='_blank' rel='noopener norefferer'>
-                    <img src={discord} alt="discord" className='w-6 h-6 lg:w-8 lg:h-8'/>
-                </Link>
-                <Link to="mailto:valorant@uw.edu" target='_blank' rel='noopener norefferer'>
-                    <img src={mailIcon} alt="email" className='w-6 h-6 lg:w-8 lg:h-8'/>
-                </Link>
-                <Link to="https://www.twitch.tv/wgavalorant" target='_blank' rel='noopener norefferer'>
-                    <img src={twitchIcon} alt="twitch" className='w-6 h-6 lg:w-8 lg:h-8'/>
-                </Link>
-                <Link to="https://www.instagram.com/valorant_uw/" target='_blank' rel='noopener norefferer'>
-                    <img src={instagramIcon} alt="instagram" className='w-5 h-5 lg:w-7 lg:h-7'/>
-                </Link>
         </div>
-    </div>
-    {/* right half: group image */}
-    <div className="">
-      <img src={groupPhoto} alt="Valorant club group photo" className="w-full h-full object-cover object-center"/>
-    </div>
+        
+        {/* Right half: group image */}
+        <div className="p-2.5 outline outline-2 outline-offset-[-2px] outline-stone-200/60">
+          <img 
+            src={groupPhoto} 
+            alt="Valorant club group photo" 
+            className="w-full lg:w-[558px] h-auto lg:h-80 object-cover object-center border-4"
+          />
+        </div>
+      </div>
     </section>
   );
 }
