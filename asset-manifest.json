@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/valorant-uw/static/css/main.78243233.css",
-    "main.js": "/valorant-uw/static/js/main.e30913d4.js",
+    "main.css": "/valorant-uw/static/css/main.4744ee8e.css",
+    "main.js": "/valorant-uw/static/js/main.e38d8e0a.js",
     "static/js/488.9f83557a.chunk.js": "/valorant-uw/static/js/488.9f83557a.chunk.js",
     "static/media/DavidPham.jpg": "/valorant-uw/static/media/DavidPham.703b2a42bfb89697db9d.jpg",
     "static/media/NicoleWang.jpg": "/valorant-uw/static/media/NicoleWang.45c9988c9b26dab3177a.jpg",
@@ -42,12 +42,12 @@
     "static/media/linkedin-icon.svg": "/valorant-uw/static/media/linkedin-icon.f87a791c9c9340a73144ae4ddc13b3b4.svg",
     "index.html": "/valorant-uw/index.html",
     "static/media/twitch-icon.svg": "/valorant-uw/static/media/twitch-icon.55449b0994e5b184658c771b5c1bebc6.svg",
-    "main.78243233.css.map": "/valorant-uw/static/css/main.78243233.css.map",
-    "main.e30913d4.js.map": "/valorant-uw/static/js/main.e30913d4.js.map",
+    "main.4744ee8e.css.map": "/valorant-uw/static/css/main.4744ee8e.css.map",
+    "main.e38d8e0a.js.map": "/valorant-uw/static/js/main.e38d8e0a.js.map",
     "488.9f83557a.chunk.js.map": "/valorant-uw/static/js/488.9f83557a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78243233.css",
-    "static/js/main.e30913d4.js"
+    "static/css/main.4744ee8e.css",
+    "static/js/main.e38d8e0a.js"
   ]
 }
