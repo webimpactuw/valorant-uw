@@ -8,6 +8,7 @@
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "gh-pages": "^6.3.0",
     "headlessui": "^0.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -17,6 +18,8 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
