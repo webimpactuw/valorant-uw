@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ecca6303.css",
-    "main.js": "/static/js/main.d5681d41.js",
+    "main.js": "/static/js/main.4185c04d.js",
     "static/js/488.9f83557a.chunk.js": "/static/js/488.9f83557a.chunk.js",
     "static/media/DavidPham.jpg": "/static/media/DavidPham.703b2a42bfb89697db9d.jpg",
     "static/media/NicoleWang.jpg": "/static/media/NicoleWang.45c9988c9b26dab3177a.jpg",
@@ -29,25 +29,25 @@
     "static/media/razer_sponsor.jpg": "/static/media/razer_sponsor.dd180173388bace323da.jpg",
     "static/media/DINish-Black.woff2": "/static/media/DINish-Black.05687c289bce6c6b8f63.woff2",
     "static/media/DINish-Medium.woff2": "/static/media/DINish-Medium.f8abcb70babb97ac2258.woff2",
-    "static/media/valorant_at_uw_logo.svg": "/static/media/valorant_at_uw_logo.577fdcb971a02cbf31ad7b6e57aec9dc.svg",
+    "static/media/valorant_at_uw_logo.svg": "/static/media/valorant_at_uw_logo.b34b96394a995684d9a299fe393e14d4.svg",
     "static/media/redbull_sponsor.png": "/static/media/redbull_sponsor.de397ae29b1f2c062f73.png",
     "static/media/ifk_sponsor.png": "/static/media/ifk_sponsor.b1877eb60b5e7ae9e5ae.png",
     "static/media/Placeholder.png": "/static/media/Placeholder.65aa5358bbf662c3b08c.png",
-    "static/media/scroll-arrow-icon.svg": "/static/media/scroll-arrow-icon.029196fe97dbdf425b8df21f14da2625.svg",
-    "static/media/tsm_sponsor.svg": "/static/media/tsm_sponsor.2e98261f3bb889002d648ff3a041d5c9.svg",
-    "static/media/instagram-icon.svg": "/static/media/instagram-icon.0cf65bffd59494ed7640295418d7ee62.svg",
-    "static/media/dot_overlay.svg": "/static/media/dot_overlay.d005af84e3d4b739b6f162de77ab3f75.svg",
-    "static/media/discord-icon.svg": "/static/media/discord-icon.f6e4e8f5372b53877b9a329d11fd8ec3.svg",
-    "static/media/mail-icon.svg": "/static/media/mail-icon.c71623db1630c04ffc22cf44a0407160.svg",
-    "static/media/linkedin-icon.svg": "/static/media/linkedin-icon.5749783c279df26207663cf3b22fc561.svg",
+    "static/media/scroll-arrow-icon.svg": "/static/media/scroll-arrow-icon.2e7f6f2f234a4bb5294d3d0b33042427.svg",
+    "static/media/tsm_sponsor.svg": "/static/media/tsm_sponsor.a2ec603015a4d26788bcad6be1efa6aa.svg",
+    "static/media/instagram-icon.svg": "/static/media/instagram-icon.7bf955350ebd0ac7e9649c20d8657c68.svg",
+    "static/media/dot_overlay.svg": "/static/media/dot_overlay.78abf493248751bedb13e4becb9c5750.svg",
+    "static/media/discord-icon.svg": "/static/media/discord-icon.2008bafde10ddcefc275b2fb456d9b7f.svg",
+    "static/media/mail-icon.svg": "/static/media/mail-icon.9feb662cacc77efdedc005276e212b3b.svg",
+    "static/media/linkedin-icon.svg": "/static/media/linkedin-icon.f87a791c9c9340a73144ae4ddc13b3b4.svg",
     "index.html": "/index.html",
-    "static/media/twitch-icon.svg": "/static/media/twitch-icon.6f61a5b255362f58cd5bc821bc4fe8c1.svg",
+    "static/media/twitch-icon.svg": "/static/media/twitch-icon.55449b0994e5b184658c771b5c1bebc6.svg",
     "main.ecca6303.css.map": "/static/css/main.ecca6303.css.map",
-    "main.d5681d41.js.map": "/static/js/main.d5681d41.js.map",
+    "main.4185c04d.js.map": "/static/js/main.4185c04d.js.map",
     "488.9f83557a.chunk.js.map": "/static/js/488.9f83557a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ecca6303.css",
-    "static/js/main.d5681d41.js"
+    "static/js/main.4185c04d.js"
   ]
 }
