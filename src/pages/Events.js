@@ -1,4 +1,3 @@
-<<<<<<< HEAD:valorant-site/src/pages/Events.js
 import { upcomingEvent, pastEvents } from "../assets/EventList";
 import Event from "../components/events/Event";
 
@@ -36,13 +35,6 @@ function Events() {
           }}>EventsEvents</h1>
         </div>
       </>
-=======
-function Events() {
-    return (
-      <div className="events-page">
-        <h1>Events</h1>
-      </div>
->>>>>>> a539af89 (fix project folder structure):src/pages/Events.js
     );
 }
 

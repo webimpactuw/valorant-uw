@@ -17,10 +17,6 @@ import Killjoy from '../assets/operator_portraits/Killjoy.png';
 import Omen from '../assets/operator_portraits/Omen.png';
 import Sova from '../assets/operator_portraits/Sova.png';
 import Placeholder from '../assets/officer_portraits/Placeholder.png';
-<<<<<<< HEAD:valorant-site/src/pages/Officers.js
-=======
-import { useEffect } from 'react';
->>>>>>> a539af89 (fix project folder structure):src/pages/Officers.js
 
 const marketingOfficerList = [
   {
@@ -101,12 +97,6 @@ const esportsOfficerList = [
 ]
 
 function Officers() {
-<<<<<<< HEAD:valorant-site/src/pages/Officers.js
-=======
-  useEffect(() => {
-    window.scrollTo({top: 0, behavior: "instant" });
-}, []);
->>>>>>> a539af89 (fix project folder structure):src/pages/Officers.js
     return (
       <>
         <div className="relative overflow-hidden max-w-full bg-contain bg-repeat" style={{ backgroundImage: "url('/dot_overlay.png')" }}>

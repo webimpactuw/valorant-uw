@@ -23,10 +23,6 @@ module.exports = {
         },
         'lavender': {
           DEFAULT: '#9987D0',
-<<<<<<< HEAD:valorant-site/tailwind.config.js
-=======
-          light: '#E2DCE8',
->>>>>>> a539af89 (fix project folder structure):tailwind.config.js
           pale: 'rgba(153, 135, 208, .2)'
         }
       }
