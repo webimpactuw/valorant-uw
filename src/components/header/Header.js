@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../assets/valorant_at_uw_logo.svg';
+import logo from '../../assets/icons/valorant_at_uw_logo.svg';
 import DropdownMenu from "./dropdown-menu";
 
 function Header() {

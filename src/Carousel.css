@@ -1,15 +1,26 @@
 .embla {
   overflow: hidden;
+  --slide-spacing: 5rem;
+  --slide-size: auto;
+  width: 100%;
+  margin: auto;
+  position: relative;
 }
 .embla__container {
   display: flex;
-  gap: 1px; 
+  gap: var(--slide-spacing); 
+  align-items: center;
 }
 .embla__slide{
-  flex: 0 0 100%;
-  min-width: 0;  
-  
+  flex: 0 0 auto;
+  min-width: 0; 
+  padding: 0;
+  justify-content: center;
+  align-items: center; 
 }
 .embla__slide__img{
-height: 200px;
+height: auto;
+width: auto;
+max-height: 189px;
+object-fit: contain;
 }
