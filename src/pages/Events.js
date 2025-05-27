@@ -5,6 +5,9 @@ import Event from "../components/events/Event";
 console.log(pastEvents);
 
 function Events() {
+    useEffect(() => {
+      window.scrollTo({top: 0, behavior: "instant" });
+    }, []);
     return (
       <>
         <div className="relative overflow-hidden max-w-full bg-contain bg-repeat" style={{ backgroundImage: "url('/dot_overlay.png')" }}>
