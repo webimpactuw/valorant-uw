@@ -125,7 +125,7 @@ function Officers() {
             <OfficerTeamContainer teamName="Marketing + Outreach" officers={marketingOfficerList} />
             <OfficerTeamContainer teamName="Esports + Events" officers={esportsOfficerList} />
           </div>
-          <h1 className="absolute top-[-20vh] left-0 md:right-[-35vw] max-sm:top-[-10vh] md:text-[35vw] text-[70vh] z-[-2] font-bold" aria-hidden = "true" style={{
+          <h1 className="absolute top-[-10vh] left-0 md:right-[-35vw] max-sm:top-[-10vh] md:text-[35vw] text-[70vh] z-[-2] font-bold" aria-hidden = "true" style={{
             color: 'white',
             WebkitTextStroke: '3px rgba(152, 134, 208, 0.2)',
             textTransform: 'uppercase',
