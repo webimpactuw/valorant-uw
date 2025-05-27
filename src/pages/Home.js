@@ -378,13 +378,20 @@ function SponsorsSection({ sponsors }) {
   const OPTIONS = {loop: true, draggable: false}
 const SLIDES = [eg,ifinikey,redbull,tsm,msi,com,razer]
   return (
-    <section 
-    id="sponsors"
-    className="w-full flex flex-col items-center">
-    <div className="text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight mb-6">
-      Sponsors
-    </div>
-    <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <section 
+        id="sponsors"
+        className="w-full min-h-[550px] py-24 bg-off-white overflow-hidden relative">
+        <div class="w-full px-6 flex flex-col justify-start items-start gap-3.5">
+          <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">
+            Sponsors
+          </div>
+          <div className="text-left text-xl lg:text-2xl text-lavender font-bold font-['DINish'] uppercase">
+            Current and Past 
+          </div>
+        </div>
+        <div className="w-full my-8">
+        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+        </div>
     </section>
   );    
 }
