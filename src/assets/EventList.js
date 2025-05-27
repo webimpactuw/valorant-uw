@@ -28,7 +28,7 @@ const events = [
         img: ThrowingWhileSnowing,
         textDate: "Fri, April 4th",
         textTime: "2PM - 5PM",
-        formattedDate: '2025-05-20'
+        formattedDate: '2025-05-30'
     },
     {
         title: "Event 2",
@@ -72,7 +72,8 @@ const formattedEvents = events
     .map(event => ({
         ...event,
         dateObj: new Date(event.formattedDate)
-    })).sort((a, b) => b.dateObj - a.dateObj);
+    }))
+    .sort((a, b) => b.dateObj - a.dateObj);
 
 let upcomingEvent = {
     title: "No Upcoming Events",
@@ -87,12 +88,15 @@ let upcomingEvent = {
 let pastEvents = [];
 const date = Date.now();
 
-for (let i = formattedEvents.length - 1; i >= 0; i--) {
-    if (formattedEvents[i].dateObj > date) {
+console.log(formattedEvents);
+for (let i = formattedEvents.length - 1; i >= 0 && formattedEvents[i].dateObj <= date; i--) {
+    pastEvents.unshift(formattedEvents[i]);
+
+    if (formattedEvents[i].dateObj.getTime() > date) {
         upcomingEvent = formattedEvents[i];
-        pastEvents = formattedEvents.slice(i + 1);
-        break;
     }
 }
+
+console.log(pastEvents);
 
 export {upcomingEvent, pastEvents};
