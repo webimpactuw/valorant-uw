@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Valorant at UW',
 
-  projectId: '39y1p7zb',
+  projectId: '4qp0efqy',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
