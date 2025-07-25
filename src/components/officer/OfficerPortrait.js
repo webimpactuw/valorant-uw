@@ -16,8 +16,8 @@ function OfficerPortrait({image, operatorImage, name, operatorName, role, gradYe
             </figure>
             <figcaption className = "text-left text-2xl uppercase font-dinish">
                 <h4 className = "font-black">{name}</h4>
-                <h5 className = "font-normal text-opacity-[1]">{role}</h5>
-                <h5 className = "font-normal">Class of {gradYear}</h5>
+                <p className = "font-normal text-opacity-[1]">{role}</p>
+                <p className = "font-normal">Class of {gradYear}</p>
             </figcaption>
         </div>
     );

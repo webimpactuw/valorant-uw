@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DropdownMenu = () => {
     return (
-        <Menu as="div" className="relative inline-block text-left">
+        <Menu as="nav" className="relative inline-block text-left">
             <MenuButton className="w-8 h-8 relative sm:hidden overflow-hidden">
                 <div className="w-8 h-8 left-0 top-0 absolute"></div>
                 <div className="w-6 h-0 left-[5.67px] top-[8.50px] absolute outline outline-2 outline-offset-[-1px] outline-white"></div>
