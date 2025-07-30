@@ -20,42 +20,63 @@ import Placeholder from "./placeholder_event_poster.png";
 import WatchParty from "./event_photos_posters/event poster watch party.png";
 import ThrowingWhileSnowing from "./event_photos_posters/event poster winter tourney.png";
 
-const events = [
+const unformattedEvents = [
     {
         title: "Event 1",
+        descrption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         altDescription: "Placeholder description",
-        link: "https://www.example.com",
         img: ThrowingWhileSnowing,
-        textDate: "Fri, April 4th",
-        textTime: "2PM - 5PM",
-        formattedDate: '2025-05-30'
+        textDate: "May 30th",
+        textTime: "2:00PM - 5:00PM",
+        formattedDate: '2025-05-30',
+        links: [
+            {
+                name: "Link1",
+                href: "example.com"
+            },
+            {
+                name: "Link2",
+                href: "example.com"
+            },
+            {
+                name: "Link2",
+                href: "example.com"
+            },
+            {
+                name: "Link2",
+                href: "example.com"
+            }
+        ]
     },
     {
         title: "Event 2",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         altDescription: "Placeholder description",
-        link: "https://www.example.com",
         img: WatchParty,
         textDate: "2025-01-01",
-        textTime: "",
-        formattedDate: '2025-05-18'
+        textTime: "3:00PM - 4:00PM",
+        formattedDate: '2025-05-18',
+        links: []
     },
     {
         title: "Event 3",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         altDescription: "Description",
-        link: "",
         img: ThrowingWhileSnowing,
         textDate: "Feb 22-23",
-        textTime: "",
-        formattedDate: '2025-02-03'
+        textTime: "3:00PM - 4:00PM",
+        formattedDate: '2025-02-03',
+        links: []
     },
     {
         title: "Event 4",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         altDescription: "Placeholder description",
-        link: "https://www.example.com",
         img: ThrowingWhileSnowing,
         textDate: "Feb 22-23",
-        textTime: "",
-        formattedDate: '2025-01-01'
+        textTime: "3:00PM - 4:00PM",
+        formattedDate: '2025-01-01',
+        links: []
     },
 ]
 
@@ -65,7 +86,7 @@ function isValidDateFormat(dateString) {
     return regex.test(dateString);
 }
 
-const formattedEvents = events
+const events = unformattedEvents
     .filter(event => 
         event.formattedDate && (requiredProperties.every(prop => event.hasOwnProperty(prop)) && isValidDateFormat(event.formattedDate))
     )
@@ -75,6 +96,8 @@ const formattedEvents = events
     }))
     .sort((a, b) => b.dateObj - a.dateObj);
 
+
+const now = new Date();
 let upcomingEvent = {
     title: "No Upcoming Events",
     description: "No upcoming events",
@@ -85,18 +108,13 @@ let upcomingEvent = {
     formattedDate: '2025'
 }
 
-let pastEvents = [];
-const date = Date.now();
-
-console.log(formattedEvents);
-for (let i = formattedEvents.length - 1; i >= 0 && formattedEvents[i].dateObj <= date; i--) {
-    pastEvents.unshift(formattedEvents[i]);
-
-    if (formattedEvents[i].dateObj.getTime() > date) {
-        upcomingEvent = formattedEvents[i];
+if (events.length > 0 && events[0].dateObj > now) {
+    for (let i = 0; i < events.length; i++) {
+        if (events[i].dateObj < now) {
+            upcomingEvent = events[i - 1]
+            break;
+        }
     }
 }
 
-console.log(pastEvents);
-
-export {upcomingEvent, pastEvents};
+export {upcomingEvent, events};

@@ -311,7 +311,7 @@ function PlaySection({ play }) {
         </div>
         {/* Right half of section */}
         <div className="flex flex-col lg:gap-8 gap-5 font-dinish lg:mx-6 w-[297px] md:w-[410px] lg:w-auto">
-          <div className="uppercase font-bold text-3xl lg:text-[40px] text-accent-dark leading-none">Upcoming Events</div>
+          <div className="uppercase font-bold text-3xl lg:text-[40px] leading-none">Upcoming Events</div>
           {/* Next event box - text and image to be replaced with database events */}
           <div className="h-[272px] md:h-[330px] md:w-full lg:w-[494px] lg:h-96 bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
             <img src={eventPoster} alt="Placeholder event poster" className="w-full bg-white overflow-hidden object-cover object-top"></img>
