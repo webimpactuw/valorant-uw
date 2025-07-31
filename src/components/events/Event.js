@@ -1,12 +1,12 @@
 
-function Event({ title, description, altDescription, img, textDate, textTime, links = [], openLightbox }) {
+function Event({ id, title, description, altDescription, img, textDate, textTime, links = [], openLightbox }) {
     return (
         <>
-            <div className="w-full p-7 gap-7 flex md:flex-row flex-col bg-[#E2DCE8] border-lavender border-4">
+            <div id={id} className="w-full p-7 gap-7 flex md:flex-row flex-col bg-[#E2DCE8] border-lavender border-4">
                 <img
                     src={img}
                     alt={altDescription || description || title}
-                    onClick={() => openLightbox && openLightbox(img)}
+                    onClick={() => openLightbox({img, altDescription})}
                     className="md:w-1/4 max-w-full h-auto border-2 border-lavender p-1 cursor-pointer min-w-0 flex-shrink-0 self-start"
                 />
                 <div className="text-left flex flex-col justify-between flex-shrink">
@@ -18,8 +18,10 @@ function Event({ title, description, altDescription, img, textDate, textTime, li
                             <h3 className="text-xl">{textTime}</h3>
                         </div>
                     </div>
-                    <p className="text-lg py-8 text-[#4D4D4D]">{description}</p>
-                    <div className="flex flex-wrap gap-4">
+                    {description && <div className="py-8 flex flex-col justify-start flex-grow">
+                        <p className="text-lg  text-[#4D4D4D]">{description}</p>
+                    </div>}
+                    <div className="flex flex-wrap gap-4 flex-grow">
                         {links && links.map(({ name, href }, idx) => {
                             return (
                                 <a key={idx} href={href} className="w-full sm:w-1/4 cursor-pointer">
