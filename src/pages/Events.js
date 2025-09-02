@@ -1,6 +1,5 @@
 import { upcomingEvent, events } from "../assets/EventList";
 import Event from "../components/events/Event";
-import { useEffect } from "react";
 import dotOverlay from '../assets/dot_overlay.svg'
 import { useEffect, useState } from "react";
 
@@ -10,6 +9,7 @@ function slugify(text) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+}
 
 function Events(){
     useEffect(() => {
@@ -67,7 +67,7 @@ function Events(){
                       <h2 className="md:text-6xl text-4xl text-left font-dinish uppercase font-bold text-accent">{upcomingEvent.title}</h2>
                       <div className="flex items-center gap-3">
                           <h3 className="text-xl">{upcomingEvent.textDate}</h3>
-                          <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
+                          {(upcomingEvent.textDate && upcomingEvent.textTime) && <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>}
                           <h3 className="text-xl">{upcomingEvent.textTime}</h3>
                       </div>
                   </a>
