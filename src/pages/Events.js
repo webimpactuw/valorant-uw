@@ -1,5 +1,7 @@
 import { upcomingEvent, events } from "../assets/EventList";
 import Event from "../components/events/Event";
+import { useEffect } from "react";
+import dotOverlay from '../assets/dot_overlay.svg'
 import { useEffect, useState } from "react";
 
 function slugify(text) {
@@ -8,7 +10,6 @@ function slugify(text) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
-}
 
 function Events(){
     useEffect(() => {
@@ -87,10 +88,10 @@ function Events(){
             )}
           </div>
           <h1 className="absolute top-[-10vh] left-0 md:right-[-35vw] max-sm:top-[-10vh] md:text-[35vw] text-[70vh] z-[-2] font-bold" aria-hidden = "true" style={{
-            color: 'white',
-            WebkitTextStroke: '3px rgba(152, 134, 208, 0.2)',
-            textTransform: 'uppercase',
-          }}>EventsEvents</h1>
+              color: 'white',
+              WebkitTextStroke: '3px rgba(152, 134, 208, 0.2)',
+              textTransform: 'uppercase',
+            }}>EventsEvents</h1>
         </div>
       </>
     );

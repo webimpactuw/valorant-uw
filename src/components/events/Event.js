@@ -1,4 +1,3 @@
-
 function Event({ id, title, description, altDescription, img, textDate, textTime, links = [], openLightbox }) {
     return (
         <>

@@ -108,6 +108,7 @@ let upcomingEvent = {
     formattedDate: '2025'
 }
 
+
 if (events.length > 0 && events[0].dateObj > now) {
     for (let i = 0; i < events.length; i++) {
         if (events[i].dateObj < now) {
