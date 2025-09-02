@@ -32,6 +32,8 @@ import msi from '../assets/valorant_sponsors/msi.png'
 import com from '../assets/valorant_sponsors/com.png'
 import razer from '../assets/valorant_sponsors/razer_sponsor.jpg'
 
+import { upcomingEvent } from "../assets/EventList";
+
 function Home() {
     return (
       <div className="home">
