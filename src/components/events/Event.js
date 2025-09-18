@@ -1,9 +1,15 @@
-function Event({ id, title, description, altDescription, img, textDate, textTime, links = [], openLightbox }) {
+import Placeholder from '../../assets/officer_portraits/Placeholder.png'
+import { urlFor } from '../../assets/sanityClient.js'
+
+function Event({ id, title, description, altDescription, img, timeDescription, formattedDate, links = [], openLightbox }) {
+
+    console.log(formattedDate);
+
     return (
         <>
             <div id={id} className="w-full p-7 gap-7 flex md:flex-row flex-col bg-[#E2DCE8] border-lavender border-4">
                 <img
-                    src={img}
+                    src = {img ? urlFor(img).auto('format').url() : Placeholder} 
                     alt={altDescription || description || title}
                     onClick={() => openLightbox({img, altDescription})}
                     className="md:w-1/4 max-w-full h-auto border-2 border-lavender p-1 cursor-pointer min-w-0 flex-shrink-0 self-start"
@@ -12,9 +18,7 @@ function Event({ id, title, description, altDescription, img, textDate, textTime
                     <div className="flex flex-col gap-2">
                         <h2 className="md:text-6xl text-4xl text-left font-dinish uppercase font-bold text-accent">{title}</h2>
                         <div className="flex items-center gap-3">
-                            <h3 className="text-xl">{textDate}</h3>
-                            <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>
-                            <h3 className="text-xl">{textTime}</h3>
+                            <h3 className="text-xl">{timeDescription}</h3>
                         </div>
                     </div>
                     {description && <div className="py-8 flex flex-col justify-start flex-grow">

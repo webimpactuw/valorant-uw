@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@headlessui/react": "^2.2.3",
+    "@sanity/client": "^7.11.0",
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/sdk-react": "^2.2.0-cors-check.1",
     "cra-template": "1.2.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",

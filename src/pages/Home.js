@@ -21,6 +21,7 @@ import officerTwo from '../assets/officer_portraits/DavidPham.jpg' /* second off
 import officerThree from '../assets/officer_portraits/DianeLazo.jpg' /* third officer portrait for officers */
 import officersBackground from '../assets/backgrounds/OFFICERS_BACKGROUND.png' /* background for officers */
 import eventPoster from '../assets/placeholder_event_poster.png'; /* event poster for play, to be replaced */
+import Placeholder from '../assets/empty_event.png'
 
 import React from 'react';
 import EmblaCarousel from '../EmblaCarousel';
@@ -32,6 +33,8 @@ import msi from '../assets/valorant_sponsors/msi.png'
 import com from '../assets/valorant_sponsors/com.png'
 import razer from '../assets/valorant_sponsors/razer_sponsor.jpg'
 
+import { useState, useEffect } from "react";
+import { client, urlFor } from "../assets/sanityClient";
 import { upcomingEvent } from "../assets/EventList";
 
 function Home() {
@@ -265,6 +268,17 @@ function AboutSection({ about }) {
 }
 
 function PlaySection({ play }) {
+
+  const [upcomingEvent, setUpcomingEvent] = useState(null);
+
+  useEffect(() => {
+    const date = new Date().toISOString()
+          
+    client.fetch(`*[_type == "events" && formattedDate > $now] | order(_formattedDate asc)[0]`, { now: date })
+      .then(data => setUpcomingEvent(data))
+      .catch(err => console.log(err));
+  }, [])
+
   return (
     <section 
       id="play"
@@ -353,16 +367,15 @@ function PlaySection({ play }) {
             <h3 className="uppercase font-bold text-3xl lg:text-[40px] text-accent-dark leading-none">Upcoming Events</h3>
             {/* Next event box - text and image to be replaced with database events */}
             <div className="md:w-full lg:w-[494px] bg-[#E2DCE8] border-2 border-lavender p-5 gap-5 flex flex-col">
-              <img src={eventPoster} alt="Placeholder event poster" className="w-full h-auto block bg-white overflow-hidden object-cover object-top" />
+              <img src={upcomingEvent?.img ? urlFor(upcomingEvent.img).auto('format').url() : Placeholder} alt={upcomingEvent?.altDescription ?? 'No upcoming events'} className="w-full h-auto block bg-white overflow-hidden object-cover object-top" />
               <div>
-                <div className="font-extrabold text-xl lg:text-2xl text-accent uppercase">Valorant Summer Slam</div>
-                <p className="text-base lg:text-xl">August 20-22</p>
-                <p className="text-base lg:text-xl">12PM PST</p>
+                <div className="font-extrabold text-xl lg:text-2xl text-accent uppercase">{upcomingEvent?.title ?? 'No upcoming events'}</div>
+                <p className="text-base lg:text-xl">{upcomingEvent?.timeDescription ?? ''}</p>
               </div>
             </div>
             {/* Button to events page */}
             <Link to="/events">
-              <div className="group border-accent hover:border-lavender border-2 p-[2px] w-full lg:w-[334px]">
+              <div className="group border-accent hover:border-lavender border-2 p-[2px] w-full lg:w-[334px] relative z-1">
                 <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">View More Events</div>
               </div>
             </Link>
@@ -374,6 +387,28 @@ function PlaySection({ play }) {
 }
 
 function OfficersSection({ officers }) {
+
+  const [president, setPresident] = useState(null);
+  const [officersList, setOfficersList] = useState(null)
+
+  useEffect(() => {
+    const date = new Date().toISOString()
+          
+    client.fetch(`*[_type == "teams" && name match "President"]`, { now: date })
+      .then(data => setPresident(data[0].officers[0]))
+      .catch(err => console.log(err));
+    
+    client.fetch(`*[_type == "teams" && name match "Marketing + Outreach"]`, { now: date })
+      .then(data => {
+        console.log(data)
+        setOfficersList(data[0].officers)
+      })
+      .catch(err => console.log(err));
+  }, [])
+
+  console.log(president);
+  console.log(officersList);
+
   return (
     <section
     id="officers" 
@@ -402,17 +437,17 @@ function OfficersSection({ officers }) {
           <ul className="relative h-[216px] md:h-[289px] w-[297px] md:w-[410px] lg:h-full lg:w-[617px] flex-shrink-0 lg:mx-6">
             <li>
               <figure className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-10 top-0 left-0">
-                <img src={officerOne} alt="officer Ansh Chavda" className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
+                <img src={officersList?.[0]?.image ? urlFor(officersList?.[0]?.image).auto('format').url() : Placeholder} alt={officersList?.[0]?.name ? `Portrait of ${officersList?.[0]?.name}` : 'Placeholder image'} className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
               </figure>
             </li>
             <li>
               <figure className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-20 left-[84px] md:left-[105px] lg:left-[166px] bottom-0">
-                <img src={officerTwo} alt="officer David Pham" className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
+                <img src={president?.image ? urlFor(president.image).auto('format').url() : Placeholder} alt={president?.name ? `Portrait of ${president.name}` : 'Placeholder image'} className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
               </figure>
             </li>
             <li>
               <figure className="absolute border-lavender border-2 p-1 lg:p-[10px] box-border overflow-hidden z-10 top-0 right-0">
-                <img src={officerThree} alt="officer Diane Lazo" className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
+                <img src={officersList?.[1]?.image ? urlFor(officersList?.[1]?.image).auto('format').url() : Placeholder} alt={officersList?.[1]?.name ? `Portrait of ${officersList?.[1]?.name}` : 'Placeholder image'} className="object-cover object-center h-[120px] md:h-[166px] lg:h-[232px] w-[120px] md:w-[166px] lg:w-[232px]" />
               </figure>
             </li>
           </ul>

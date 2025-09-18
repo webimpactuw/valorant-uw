@@ -1,107 +1,29 @@
 import OfficerPortrait from '../components/officer/OfficerPortrait.js';
 import OfficerTeamContainer from '../components/officer/OfficerTeamContainer.js';
-import AnshChavda from '../assets/officer_portraits/AnshChavda.jpg';
-import DavidPham from '../assets/officer_portraits/DavidPham.jpg';
-import DianeLazo from '../assets/officer_portraits/DianeLazo.jpg';
-import ElaineHsu from '../assets/officer_portraits/ElaineHsu.jpg';
-import JakeWonChung from '../assets/officer_portraits/JakeChung.jpg';
-import JostenTwist from '../assets/officer_portraits/JostenTwist.jpg';
-import MinaTrice from '../assets/officer_portraits/MinaTrice.jpg';
-import NicoleErinWang from '../assets/officer_portraits/NicoleWang.jpg';
-import StevenTeng from '../assets/officer_portraits/SteveTeng.jpg';
-import Clove from '../assets/operator_portraits/Clove.png';
-import Cypher from '../assets/operator_portraits/Cypher.png';
-import Gekko from '../assets/operator_portraits/Gekko.png';
-import Jett from '../assets/operator_portraits/Jett.png';
-import Killjoy from '../assets/operator_portraits/Killjoy.png';
-import Omen from '../assets/operator_portraits/Omen.png';
-import Sova from '../assets/operator_portraits/Sova.png';
-import Placeholder from '../assets/officer_portraits/Placeholder.png';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import dotOverlay from '../assets/dot_overlay.svg'
+import { client } from '../assets/sanityClient.js'
 
-const marketingOfficerList = [
-  {
-    image: NicoleErinWang,
-    operatorImage: Gekko,
-    name: "Nicole Wang",
-    operatorName: "Gekko",
-    role: "Director",
-    gradYear: "2027"
-  },
-  {
-    image: AnshChavda,
-    operatorImage: Jett,
-    name: "Ansh Chavda",
-    operatorName: "Jett",
-    role: "Finance",
-    gradYear: "2027"
-  },
-  {
-    image: DianeLazo,
-    operatorImage: Omen,
-    name: "Diane Lazo",
-    operatorName: "Omen",
-    role: "Social Media",
-    gradYear: "2027"
-  }
-]
 
-const esportsOfficerList = [
-  {
-    image: ElaineHsu,
-    operatorImage: Killjoy,
-    name: "Elaine Hsu",
-    operatorName: "Killjoy",
-    role: "Director",
-    gradYear: "2026"
-  },
-  {
-    image: MinaTrice,
-    operatorImage: Cypher,
-    name: "Mina Trice",
-    operatorName: "Cypher",
-    role: "Event Org",
-    gradYear: "2025"
-  },
-  {
-    image: StevenTeng,
-    operatorImage: Cypher,
-    name: "Steve Teng",
-    operatorName: "Cypher",
-    role: "Event Org",
-    gradYear: "2028"
-  },
-  {
-    image: Placeholder,
-    operatorImage: Jett,
-    name: "Kim Nguyen",
-    operatorName: "Jett",
-    role: "Tournaments",
-    gradYear: "2026"
-  },
-  {
-    image: JostenTwist,
-    operatorImage: Sova,
-    name: "Josten Twist",
-    operatorName: "Sova",
-    role: "Esports",
-    gradYear: "2028",
-  },
-  {
-    image: JakeWonChung,
-    operatorImage: Clove,
-    name: "Jake Chung",
-    operatorName: "Clove",
-    role: "Esports",
-    gradYear: "2026"
-  }
-]
 
 function Officers() {
+  const [president, setPresident] = useState();
+  const [teams, setTeams] = useState();
+
+
   useEffect(() => {
     window.scrollTo({top: 0, behavior: "instant" });
-}, []);
+
+    client.fetch(`*[_type == "teams" && name match "President"]`)
+      .then(data => setPresident(data[0].officers[0]))
+      .catch(err => console.error(err));
+
+    client.fetch(`*[_type == "teams" && !(name match "President")]`)
+      .then(data => setTeams(data))
+      .catch(err => console.error(err));
+
+  }, []);
+
     return (
       <>
         <div className="relative overflow-hidden max-w-full bg-contain bg-repeat flex justify-center" style={{ backgroundImage: `url(${dotOverlay})` }}>
@@ -115,17 +37,16 @@ function Officers() {
                 <div className="md:w-2/5 md:py-0 flex relative w-full py-[4em]">
                   <h3 className="president-subtitle text-black text-6xl text-left pb-[1.5em] uppercase font-anton-sc md:pr-[1.25rem] pr-[1rem]" style={{ writingMode: "vertical-rl" }}>President</h3>
                   <OfficerPortrait 
-                    image={DavidPham} 
-                    operatorImage={Omen} 
-                    name="David Pham" 
-                    operatorName = "Omen" 
-                    role="President" 
-                    gradYear="2025" 
+                    image={president?.image} 
+                    operatorImage={president?.operatorImage} 
+                    name={president?.name}
+                    operatorName = {president?.operatorName} 
+                    role={president?.role}
+                    gradYear={president?.gradYear}
                   />
                 </div>
               </section>
-              <OfficerTeamContainer teamName="Marketing + Outreach" officers={marketingOfficerList} />
-              <OfficerTeamContainer teamName="Esports + Events" officers={esportsOfficerList} />
+              {teams && teams.map( team => <OfficerTeamContainer teamName={team.name} officers={team.officers}/>)}
             </div>
             <h1 className="absolute top-[-10vh] left-0 md:right-[-35vw] max-sm:top-[-10vh] md:text-[35vw] text-[70vh] z-[-2] font-bold" aria-hidden = "true" style={{
               color: 'white',

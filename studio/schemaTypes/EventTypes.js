@@ -5,7 +5,8 @@ import { defineType, defineField } from "sanity";
  * @typedef {Object} Event
  * @property {string} title - The title of the event.
  * @property {string} description - A written description of the event.
- * @property {EventTiming} eventTiming - The timing details for the event.
+ * @property {string} timeDescription - A description of the time the event takes place.
+ * @property {datetime} formattedData - Date formatted for ordering events chronilogically.
  * @property {Image} img - The main image for the event.
  * @property {string} altDescription - Description of the image for accessibility.
  * @property {Array<Link>} [links] - Related links for the event (Optional).
@@ -26,16 +27,21 @@ export const eventType = defineType({
             name: 'description',
             title: 'Description',
             type: 'text',
-            validation: Rule => Rule.required().error('Description is required'),
 
         }),
-        defineField({
-            name: 'eventTiming',
-            title: 'Event Timing',
-            type: 'eventTiming',
-            validation: Rule => Rule.required().error('Event timing is required'),
-
-        }),
+        {
+          name: 'timeDescription',
+          type: 'string',
+          title: 'Time Description (Optional)',
+          description: 'Enter the time of the event in whatever format fits best (e.g. "August 20-22, starting at 6:00 PM PST each day").',
+        },
+        {
+          name: 'formattedDate',
+          type: 'datetime',
+          title: 'Formatted Time',
+          description: 'Enter the start time and date of the event. No need to be exact, this is only used to order them chronologically on the page.',
+          validation: Rule => Rule.required().error('Start date is required'),
+        },
         defineField({
             name: 'img',
             title: 'Image',
@@ -68,44 +74,4 @@ export const eventType = defineType({
             ]
         })
     ]
-});
-
-/**
- * Sanity schema for event timing details.
- * @typedef {Object} EventTiming
- * @property {string} startDate - The start date of the event (required).
- * @property {string} [startTime] - The start time of the event (optional).
- * @property {string} [endDate] - The end date of the event (optional).
- * @property {string} [endTime] - The end time of the event (optional).
- */
-export const eventTiming = defineType({
-  name: 'eventTiming',
-  type: 'object',
-  title: 'Event Timing',
-  fields: [
-    {
-      name: 'startDate',
-      type: 'date',
-      title: 'Start Date',
-      validation: Rule => Rule.required().error('Start date is required'),
-    },
-    {
-      name: 'startTime',
-      type: 'string',
-      title: 'Start Time (Optional)',
-      description: 'Enter time in HH:mm AM/PM format (e.g. 12:30 PM). Leave blank for all-day events.',
-    },
-    {
-      name: 'endDate',
-      type: 'date',
-      title: 'End Date (Optional)',
-      description: 'Leave blank if not applicable',
-    },
-    {
-      name: 'endTime',
-      type: 'string',
-      title: 'End Time (Optional)',
-      description: 'Enter time in HH:mm AM/PM format. Leave blank if not applicable.',
-    },
-  ],
 });

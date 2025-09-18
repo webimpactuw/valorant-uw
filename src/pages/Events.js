@@ -1,7 +1,8 @@
 import { upcomingEvent, events } from "../assets/EventList";
 import Event from "../components/events/Event";
-import dotOverlay from '../assets/dot_overlay.svg'
+import Placeholder from '../assets/empty_event.png'
 import { useEffect, useState } from "react";
+import { client, urlFor } from '../assets/sanityClient.js'
 
 function slugify(text) {
   return text
@@ -12,11 +13,24 @@ function slugify(text) {
 }
 
 function Events(){
-    useEffect(() => {
-      window.scrollTo({top: 0, behavior: "instant" });
-    }, []);
     const [lightboxImg, setLightboxImg] = useState(null);
     const [isLightboxVisible, setIsLightboxVisible] = useState(false);
+    const [events, setEvents] = useState();
+    const [upcomingEvent, setUpcomingEvent] = useState(null);
+
+    useEffect(() => {
+      window.scrollTo({top: 0, behavior: "instant" });
+
+      client.fetch(`*[_type == "events"] | order(_formattedDate desc)`)
+        .then(data => setEvents(data))
+        .catch(err => console.log(err));
+
+      const date = new Date().toISOString()
+      
+      client.fetch(`*[_type == "events" && formattedDate > $now] | order(_formattedDate asc)[0]`, { now: date })
+        .then(data => setUpcomingEvent(data))
+        .catch(err => console.log(err));
+    }, []);
 
     const openLightbox = (lightboxImg) => {
       setLightboxImg(lightboxImg);
@@ -27,6 +41,8 @@ function Events(){
       setIsLightboxVisible(false);
       setTimeout(() => setLightboxImg(null), 300);
     };
+
+    console.log(events)
 
     return (
       <>
@@ -41,7 +57,7 @@ function Events(){
           >
             <div className="bg-slate-700 opacity-90 absolute w-full h-full z-10 transition-opacity duration-300"></div>
             <div className={`max-w-screen-xl h-full flex flex-col justify-center gap-8 items-center z-20 relative transition-transform duration-300 ${isLightboxVisible ? '-translate-y-3' : 'translate-x-0'}`}>
-              <img src={lightboxImg.img} alt={lightboxImg.altDescription} className="md:h-4/5 md:w-auto w-5/6 h-auto opacity-full border-2 border-lavender p-2"/>
+              <img src={urlFor(lightboxImg.img).auto('format').url()} alt={lightboxImg.altDescription} className="md:h-4/5 md:w-auto w-5/6 h-auto opacity-full border-2 border-lavender p-2"/>
               <button onClick={closeLightbox} className="group border-accent hover:border-lavender border-2 p-[2px] w-1/3 flex-wrap">
                   <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">Close</div>
               </button>
@@ -57,31 +73,34 @@ function Events(){
               </div>
               <div className="md:w-[40%] md:py-0 flex md:flex-col flex-col-reverse relative w-full py-[4em] align-center">
                 <div className="border-lavender border-2 p-6 md:w-[35vw] bg-[#E2DCE8]">
-                  <a href={`#${slugify(upcomingEvent.title)}`} className = "flex flex-col gap-2">
+                  <div className = "flex flex-col gap-2">
                       <img 
                           className= " w-full box-border"
-                          src = {upcomingEvent.img} 
-                          alt = {upcomingEvent.description} 
-                          title = {upcomingEvent.title} 
+                          src = {upcomingEvent?.img ? urlFor(upcomingEvent.img).auto('format').url() : Placeholder} 
+                          alt = {upcomingEvent?.altDescription ?? 'No upcoming events'} 
+                          title = {upcomingEvent?.title ?? 'No upcoming events'} 
                       />  
-                      <h2 className="md:text-6xl text-4xl text-left font-dinish uppercase font-bold text-accent">{upcomingEvent.title}</h2>
+                      <h2 className="md:text-6xl text-4xl text-left font-dinish uppercase font-bold text-accent">{upcomingEvent?.title ?? 'No upcoming events'}</h2>
                       <div className="flex items-center gap-3">
-                          <h3 className="text-xl">{upcomingEvent.textDate}</h3>
-                          {(upcomingEvent.textDate && upcomingEvent.textTime) && <div className=" w-1 h-1 bg-accent-dark flex-shrink-0"/>}
-                          <h3 className="text-xl">{upcomingEvent.textTime}</h3>
+                          <h3 className="text-xl">{upcomingEvent?.timeDescription ?? ''}</h3>
                       </div>
-                  </a>
+                      <a href={`#${upcomingEvent && slugify(upcomingEvent.title)}`} className = "flex flex-col gap-2">
+                        <div className="group border-accent hover:border-lavender border-2 p-[2px] w-full lg:w-[334px] relative z-1">
+                          <div className="p-2 bg-accent group-hover:bg-lavender text-off-white uppercase font-bold text-2xl text-center py-2.5">See Event</div>
+                        </div>
+                      </a>
+                    </div>
                 </div>
                 <h3 className="text-black text-6xl md:text-right text-left md:pt-[0.5em] pb-[0.5em] uppercase font-anton-sc">Upcoming</h3>
               </div>
             </section>
-            {events.length > 0 && (
+            {(events && events.length > 0) && (
               <section> 
               <h2 className="text-black text-6xl text-left pt-[0.5em] font-dinish uppercase font-bold mb-8">Events</h2>
                 <div className="w-full flex flex-col gap-10">
-                  {events.map(({title, description, altDescription, img, textDate, textTime, links}) => {
+                  {events.map(({title, description, altDescription, img, timeDescription, formattedDate, links}) => {
                     const eventId = slugify(title);
-                    return <Event id={eventId} key={eventId} title={title} description={description} altDescription={altDescription} img={img} textDate={textDate} textTime={textTime} links={links} openLightbox={openLightbox}/>;
+                    return <Event id={eventId} key={eventId} title={title} description={description} altDescription={altDescription} img={img} timeDescription={timeDescription} formattedDate={formattedDate} links={links} openLightbox={openLightbox}/>;
                   })}
                 </div>
               </section>
