@@ -3,7 +3,7 @@
   "short_name": "Valorant UW",
   "icons": [
     {
-      "src": "/valo_at_uw_logo.svg",
+      "src": "/valorant-uw/valo_at_uw_logo.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }

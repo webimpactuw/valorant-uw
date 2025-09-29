@@ -9,7 +9,7 @@ import CarouselPreview from './CarouselPreview'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/valorant-uw">
       <Routes>
       <Route path="/carousel-preview" element={<CarouselPreview />} />
         <Route path="/" element={<Layout />}>
