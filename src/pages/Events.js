@@ -2,7 +2,7 @@ import { upcomingEvent, pastEvents } from "../assets/EventList";
 import Event from "../components/events/Event";
 import { useEffect } from "react";
 
-console.log(pastEvents);
+// console.log(pastEvents);
 
 function Events() {
     useEffect(() => {

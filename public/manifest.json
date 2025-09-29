@@ -1,0 +1,15 @@
+{
+  "name": "Valorant at UW",
+  "short_name": "Valorant UW",
+  "icons": [
+    {
+      "src": "/valo_at_uw_logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

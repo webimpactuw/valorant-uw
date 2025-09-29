@@ -252,7 +252,7 @@ function PlaySection({ play }) {
             <div className="flex items-center py-6">
               <div className="flex items-center md:w-1/2 gap-5 lg:gap-7 mr-6 md:mr-0">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" className="w-9 h-9 lg:w-14 lg:h-14">
-                  <path d="M8 8L24.6667 53L33 34.1377L53 28.2096L8 8Z" stroke="#3B0361" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M8 8L24.6667 53L33 34.1377L53 28.2096L8 8Z" stroke="#3B0361" strokeWidth="3" strokeLinejoin="round"/>
                 </svg>
                 <div className="uppercase font-bold font-dinish text-3xl lg:text-[40px] hidden md:block">Play</div>
               </div>
@@ -274,7 +274,7 @@ function PlaySection({ play }) {
             <div className="flex items-center py-6">
               <div className="flex items-center md:w-1/2 gap-5 lg:gap-7 mr-6 md:mr-0">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" className="w-9 h-9 lg:w-14 lg:h-14">
-                  <path d="M51 28.5H42M15 28.5H6M28.5 15V6M28.5 51V42M46.5 28.5C46.5 38.4411 38.4411 46.5 28.5 46.5C18.5589 46.5 10.5 38.4411 10.5 28.5C10.5 18.5589 18.5589 10.5 28.5 10.5C38.4411 10.5 46.5 18.5589 46.5 28.5ZM35.25 28.5C35.25 32.2279 32.2279 35.25 28.5 35.25C24.7721 35.25 21.75 32.2279 21.75 28.5C21.75 24.7721 24.7721 21.75 28.5 21.75C32.2279 21.75 35.25 24.7721 35.25 28.5Z" stroke="#3B0361" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M51 28.5H42M15 28.5H6M28.5 15V6M28.5 51V42M46.5 28.5C46.5 38.4411 38.4411 46.5 28.5 46.5C18.5589 46.5 10.5 38.4411 10.5 28.5C10.5 18.5589 18.5589 10.5 28.5 10.5C38.4411 10.5 46.5 18.5589 46.5 28.5ZM35.25 28.5C35.25 32.2279 32.2279 35.25 28.5 35.25C24.7721 35.25 21.75 32.2279 21.75 28.5C21.75 24.7721 24.7721 21.75 28.5 21.75C32.2279 21.75 35.25 24.7721 35.25 28.5Z" stroke="#3B0361" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <div className="uppercase font-bold font-dinish text-3xl lg:text-[40px] hidden md:block">Train</div>
               </div>
@@ -291,7 +291,7 @@ function PlaySection({ play }) {
             <div className="flex items-center py-6">
               <div className="flex items-center md:w-1/2 gap-5 lg:gap-7 mr-6 md:mr-0">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" className="w-9 h-9 lg:w-14 lg:h-14">
-                  <path d="M28.5 6C34.1279 12.1613 37.3262 20.1571 37.5 28.5C37.3262 36.8429 34.1279 44.8387 28.5 51M28.5 6C22.8721 12.1613 19.6738 20.1571 19.5 28.5C19.6738 36.8429 22.8721 44.8387 28.5 51M28.5 6C16.0736 6 6 16.0736 6 28.5C6 40.9264 16.0736 51 28.5 51M28.5 6C40.9264 6 51 16.0736 51 28.5C51 40.9264 40.9264 51 28.5 51M7.12504 21.75H49.875M7.125 35.25H49.875" stroke="#3B0361" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M28.5 6C34.1279 12.1613 37.3262 20.1571 37.5 28.5C37.3262 36.8429 34.1279 44.8387 28.5 51M28.5 6C22.8721 12.1613 19.6738 20.1571 19.5 28.5C19.6738 36.8429 22.8721 44.8387 28.5 51M28.5 6C16.0736 6 6 16.0736 6 28.5C6 40.9264 16.0736 51 28.5 51M28.5 6C40.9264 6 51 16.0736 51 28.5C51 40.9264 40.9264 51 28.5 51M7.12504 21.75H49.875M7.125 35.25H49.875" stroke="#3B0361" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <div className="uppercase font-bold font-dinish text-3xl lg:text-[40px] hidden md:block">Bond</div>
               </div>
@@ -381,7 +381,7 @@ const SLIDES = [eg,ifinikey,redbull,tsm,msi,com,razer]
       <section 
         id="sponsors"
         className="w-full min-h-[550px] py-24 bg-off-white overflow-hidden relative">
-        <div class="w-full px-6 flex flex-col justify-start items-start gap-3.5">
+        <div className="w-full px-6 flex flex-col justify-start items-start gap-3.5">
           <div className="text-left text-5xl lg:text-7xl text-accent font-normal font-anton-sc uppercase leading-tight">
             Sponsors
           </div>

@@ -88,7 +88,7 @@ let upcomingEvent = {
 let pastEvents = [];
 const date = Date.now();
 
-console.log(formattedEvents);
+// console.log(formattedEvents);
 for (let i = formattedEvents.length - 1; i >= 0 && formattedEvents[i].dateObj <= date; i--) {
     pastEvents.unshift(formattedEvents[i]);
 
@@ -97,6 +97,6 @@ for (let i = formattedEvents.length - 1; i >= 0 && formattedEvents[i].dateObj <=
     }
 }
 
-console.log(pastEvents);
+// console.log(pastEvents);
 
 export {upcomingEvent, pastEvents};
