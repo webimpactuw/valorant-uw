@@ -75,28 +75,23 @@ const formattedEvents = events
     }))
     .sort((a, b) => b.dateObj - a.dateObj);
 
-let upcomingEvent = {
-    title: "No Upcoming Events",
-    description: "No upcoming events",
-    link: "https://www.example.com",
-    img: Placeholder,
-    textDate: "",
-    textTime: "",
-    formattedDate: '2025'
-}
+const now = Date.now();
 
-let pastEvents = [];
-const date = Date.now();
+// formattedEvents is sorted descending, so upcoming events are at the end
+const upcomingEvents = formattedEvents.filter(e => e.dateObj.getTime() > now);
+const pastEvents = formattedEvents.filter(e => e.dateObj.getTime() <= now);
 
-// console.log(formattedEvents);
-for (let i = formattedEvents.length - 1; i >= 0 && formattedEvents[i].dateObj <= date; i--) {
-    pastEvents.unshift(formattedEvents[i]);
+// Pick the soonest upcoming event (last element of descending-sorted array)
+const upcomingEvent = upcomingEvents.length > 0
+    ? upcomingEvents[upcomingEvents.length - 1]
+    : {
+        title: "No Upcoming Events",
+        description: "No upcoming events",
+        link: "",
+        img: Placeholder,
+        textDate: "",
+        textTime: "",
+        formattedDate: ''
+    };
 
-    if (formattedEvents[i].dateObj.getTime() > date) {
-        upcomingEvent = formattedEvents[i];
-    }
-}
-
-// console.log(pastEvents);
-
-export {upcomingEvent, pastEvents};
+export { upcomingEvent, pastEvents };
