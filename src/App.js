@@ -5,6 +5,7 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Officers from "./pages/Officers";
+import NotFound from "./pages/NotFound";
 import CarouselPreview from './CarouselPreview'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="events" element={<Events />} />
           <Route path="officers" element={<Officers />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
